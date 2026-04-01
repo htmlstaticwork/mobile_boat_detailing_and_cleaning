@@ -1,0 +1,117 @@
+/* ═══════════════════════════════
+   BOAT · DASHBOARD STYLES
+═══════════════════════════════ */
+.dash-layout{display:flex;min-height:100vh;background:var(--bg);}
+/* SIDEBAR */
+.dash-sidebar{width:260px;background:var(--primary);display:flex;flex-direction:column;position:fixed;top:0;left:0;height:100vh;z-index:200;transition:transform .4s cubic-bezier(.76,0,.24,1);}
+.sidebar-logo{padding:1.6rem 1.5rem;border-bottom:1px solid rgba(240,248,255,.1);display:flex;align-items:center;gap:.7rem;}
+.sidebar-logo-icon{width:34px;height:34px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.sidebar-logo-text{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--secondary);}
+.sidebar-nav{flex:1;padding:1.5rem 0;overflow-y:auto;}
+.sidebar-section-label{font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,248,255,.35);padding:.5rem 1.5rem;margin-top:1rem;}
+.sidebar-nav a{display:flex;align-items:center;gap:.8rem;padding:.8rem 1.5rem;color:rgba(240,248,255,.6);text-decoration:none;font-size:.9rem;transition:all .3s;position:relative;}
+.sidebar-nav a:hover,.sidebar-nav a.active{color:#fff;background:rgba(0,180,216,.15);}
+.sidebar-nav a.active::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);}
+.sidebar-nav a .nav-icon{font-size:1.1rem;flex-shrink:0;width:20px;}
+.sidebar-bottom{padding:1.5rem;border-top:1px solid rgba(240,248,255,.1);}
+.sidebar-user{display:flex;align-items:center;gap:.7rem;margin-bottom:1rem;}
+.user-avatar{width:38px;height:38px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--primary);flex-shrink:0;}
+.user-info h4{font-size:.88rem;color:var(--secondary);font-weight:600;}
+.user-info p{font-size:.75rem;color:rgba(240,248,255,.5);}
+.logout-btn{display:flex;align-items:center;gap:.6rem;color:rgba(240,248,255,.55);text-decoration:none;font-size:.85rem;padding:.5rem 0;transition:color .3s;background:none;border:none;cursor:pointer;width:100%;}
+.logout-btn:hover{color:#ff6b6b;}
+
+/* MAIN CONTENT */
+.dash-main{flex:1;margin-left:260px;display:flex;flex-direction:column;}
+.dash-topbar{background:var(--card-bg);border-bottom:1px solid var(--border);padding:.9rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.topbar-left h1{font-family:'DM Serif Display',serif;font-size:1.5rem;font-weight:400;}
+.topbar-left p{font-size:.82rem;color:var(--text-muted);}
+.topbar-right{display:flex;align-items:center;gap:.8rem;}
+.topbar-btn{width:36px;height:36px;border-radius:50%;background:var(--bg-alt);border:1px solid var(--border);color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;position:relative;transition:all .3s;}
+.topbar-btn:hover{border-color:var(--accent);color:var(--accent);}
+.badge{position:absolute;top:-2px;right:-2px;width:16px;height:16px;border-radius:50%;background:#ef4444;color:#fff;font-size:.55rem;display:flex;align-items:center;justify-content:center;font-weight:700;}
+.dash-content{padding:2rem;flex:1;}
+
+/* METRIC CARDS */
+.metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-bottom:2rem;}
+.metric-card{background:var(--card-bg);border:1px solid var(--border);padding:1.5rem;position:relative;overflow:hidden;transition:all .3s;}
+.metric-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
+.metric-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);}
+.metric-icon{font-size:1.8rem;margin-bottom:.8rem;color:var(--accent);}
+.metric-val{font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--text);line-height:1;}
+.metric-label{font-size:.78rem;color:var(--text-muted);margin-top:.3rem;}
+.metric-change{font-size:.72rem;color:#22c55e;margin-top:.5rem;font-weight:600;}
+.metric-change.down{color:#ef4444;}
+
+/* STATUS BADGE */
+.status{display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;font-weight:600;padding:.25rem .7rem;border-radius:20px;}
+.status-success{background:rgba(34,197,94,.15);color:#22c55e;}
+.status-pending{background:rgba(234,179,8,.15);color:#eab308;}
+.status-cancelled{background:rgba(239,68,68,.15);color:#ef4444;}
+.status-scheduled{background:rgba(0,180,216,.15);color:var(--accent);}
+
+/* DATA TABLE */
+.data-table{width:100%;border-collapse:collapse;margin-top:1rem;}
+.data-table th{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);padding:.8rem 1rem;text-align:left;border-bottom:1px solid var(--border);}
+.data-table td{padding:.9rem 1rem;font-size:.88rem;border-bottom:1px solid var(--border);color:var(--text);}
+.data-table tr:hover td{background:var(--accent-10);}
+
+/* DASH CARDS */
+.dash-card{background:var(--card-bg);border:1px solid var(--border);padding:1.5rem;margin-bottom:1.5rem;}
+.dash-card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;}
+.dash-card-header h3{font-family:'DM Serif Display',serif;font-size:1.2rem;font-weight:400;}
+
+/* CALENDAR */
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:.3rem;margin-top:1rem;}
+.cal-header{display:grid;grid-template-columns:repeat(7,1fr);gap:.3rem;margin-bottom:.5rem;}
+.cal-day-name{font-family:'Space Mono',monospace;font-size:.58rem;text-align:center;color:var(--text-muted);padding:.3rem;}
+.cal-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:.8rem;border:1px solid var(--border);cursor:pointer;transition:all .3s;position:relative;}
+.cal-day:hover{border-color:var(--accent);background:var(--accent-10);}
+.cal-day.today{background:var(--accent);color:var(--primary);border-color:var(--accent);font-weight:700;}
+.cal-day.has-appt::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:50%;background:var(--accent);}
+.cal-day.has-appt.today::after{background:var(--primary);}
+
+/* FORM */
+.dash-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+
+/* BOATS LIST */
+.boat-card{background:var(--card-bg);border:1px solid var(--border);padding:1.2rem 1.5rem;display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem;transition:all .3s;}
+.boat-card:hover{border-color:var(--accent);}
+.boat-info{display:flex;align-items:center;gap:1rem;}
+.boat-icon-wrap{width:44px;height:44px;background:var(--accent-10);border:1px solid var(--accent-20);display:flex;align-items:center;justify-content:center;font-size:1.4rem;}
+.boat-name{font-weight:600;font-size:.95rem;}
+.boat-detail{font-size:.78rem;color:var(--text-muted);margin-top:.2rem;}
+.boat-actions{display:flex;gap:.5rem;}
+.action-btn{padding:.35rem .8rem;font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border);background:none;color:var(--text);cursor:pointer;transition:all .3s;}
+.action-btn:hover{border-color:var(--accent);color:var(--accent);}
+.action-btn.danger:hover{border-color:#ef4444;color:#ef4444;}
+
+/* RECURRING */
+.recur-card{background:var(--card-bg);border:1px solid var(--border);padding:1.2rem 1.5rem;margin-bottom:.8rem;display:flex;align-items:center;justify-content:space-between;}
+.recur-icon{font-size:1.5rem;color:var(--accent);margin-right:1rem;}
+.recur-name{font-weight:600;font-size:.95rem;}
+.recur-detail{font-size:.78rem;color:var(--text-muted);}
+.toggle-switch{width:44px;height:24px;background:var(--border);border-radius:12px;position:relative;cursor:pointer;transition:background .3s;}
+.toggle-switch.on{background:var(--accent);}
+.toggle-switch::after{content:'';width:18px;height:18px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:transform .3s;}
+.toggle-switch.on::after{transform:translateX(20px);}
+
+/* PROGRESS BAR */
+.progress-bar{height:6px;background:var(--border);border-radius:3px;margin-top:.4rem;}
+.progress-fill{height:100%;background:var(--accent);border-radius:3px;transition:width .8s ease;}
+
+/* MOBILE SIDEBAR */
+.sidebar-toggle{display:none;position:fixed;bottom:1.5rem;left:1.5rem;width:48px;height:48px;background:var(--accent);color:var(--primary);border:none;border-radius:50%;cursor:pointer;font-size:1.2rem;z-index:300;}
+
+@media(max-width:768px){
+  .dash-sidebar{transform:translateX(-100%);}
+  .dash-sidebar.open{transform:translateX(0);}
+  .dash-main{margin-left:0;}
+  .metrics-grid{grid-template-columns:repeat(2,1fr);}
+  .sidebar-toggle{display:flex;align-items:center;justify-content:center;}
+  .dash-form .form-row{grid-template-columns:1fr;}
+}
+@media(max-width:360px){
+  .metrics-grid{grid-template-columns:1fr;}
+  .boat-card{flex-direction:column;align-items:flex-start;gap:.8rem;}
+}

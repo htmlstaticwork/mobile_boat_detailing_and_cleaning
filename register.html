@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Register · CleanWave</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+body{cursor:default;}
+.cursor,.cursor-ring{display:none;}
+.auth-page{min-height:100vh;display:flex;}
+.auth-visual{flex:1;background-image:url('https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=1200&q=80');background-size:cover;background-position:center;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:3rem;}
+.auth-visual::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,37,64,.95) 0%,rgba(10,37,64,.4) 60%,transparent 100%);}
+.auth-visual-content{position:relative;z-index:1;}
+.auth-panel{width:min(520px,100%);display:flex;flex-direction:column;justify-content:center;padding:2.5rem;background:var(--bg);overflow-y:auto;}
+.auth-panel-inner{max-width:420px;width:100%;margin:0 auto;}
+.auth-logo{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--accent);text-decoration:none;display:flex;align-items:center;gap:.5rem;margin-bottom:2rem;}
+.auth-heading{font-family:'DM Serif Display',serif;font-size:2rem;margin-bottom:.4rem;}
+.auth-sub{font-size:.95rem;color:var(--text-muted);margin-bottom:2rem;}
+.auth-sub a{color:var(--accent);text-decoration:none;}
+.auth-input-wrap{position:relative;}
+.auth-input-wrap input{padding-right:3rem;}
+.pw-eye{position:absolute;right:.9rem;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:1rem;transition:color .3s;}
+.pw-eye:hover{color:var(--accent);}
+.strength-wrap{margin-top:.4rem;}
+.strength-bar{height:3px;background:var(--border);border-radius:2px;overflow:hidden;}
+.strength-fill{height:100%;width:0;border-radius:2px;transition:width .4s,background .4s;}
+.strength-label{font-family:'Space Mono',monospace;font-size:.6rem;color:var(--text-muted);margin-top:.2rem;}
+.auth-btn{width:100%;padding:.9rem;background:var(--accent);color:var(--primary);border:none;cursor:pointer;font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;transition:all .3s;margin-bottom:1.5rem;}
+.auth-btn:hover{background:#0096b5;transform:translateY(-2px);}
+.auth-divider{display:flex;align-items:center;gap:.8rem;margin-bottom:1.2rem;font-size:.8rem;color:var(--text-muted);}
+.auth-divider::before,.auth-divider::after{content:'';flex:1;height:1px;background:var(--border);}
+.social-auth{display:flex;flex-direction:column;gap:.7rem;}
+.social-btn{display:flex;align-items:center;justify-content:center;gap:.7rem;padding:.8rem;border:1px solid var(--border);background:var(--card-bg);color:var(--text);font-size:.88rem;cursor:pointer;transition:all .3s;text-decoration:none;}
+.social-btn:hover{border-color:var(--accent);}
+.si-google{color:#EA4335;}
+.si-apple{color:var(--text);}
+.si-email{color:var(--accent);}
+.auth-corner{position:fixed;top:1.5rem;right:1.5rem;display:flex;gap:.5rem;z-index:10;}
+.auth-corner button{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--card-bg);color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:all .3s;}
+.auth-corner button:hover{border-color:var(--accent);}
+.name-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.check-wrap{display:flex;align-items:flex-start;gap:.5rem;font-size:.88rem;line-height:1.5;margin-bottom:.8rem;cursor:pointer;}
+.check-wrap input{accent-color:var(--accent);flex-shrink:0;margin-top:3px;}
+.check-wrap a{color:var(--accent);text-decoration:none;}
+@media(max-width:768px){.auth-visual{display:none;}.auth-panel{width:100%;min-height:100vh;padding:2rem 1.5rem;}.name-row{grid-template-columns:1fr;}}
+@media(max-width:360px){.auth-panel{padding:1.5rem 1rem;}}
+</style>
+</head>
+<body>
+<div class="auth-corner">
+  <button class="rtl-btn" aria-label="RTL">⇄<span class="rtl-lbl" style="font-size:.55rem;font-family:'Space Mono',monospace;margin-left:2px">RTL</span></button>
+  <button class="theme-btn" aria-label="Theme">☀️</button>
+</div>
+
+<div class="auth-page">
+  <div class="auth-visual">
+    <div class="auth-visual-content">
+      <div style="font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem;">Join CleanWave</div>
+      <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);color:#fff;margin-bottom:.8rem;">Your Boat Deserves<br/><em style="color:var(--accent)">the Best Care</em></h2>
+      <p style="color:rgba(240,248,255,.65);font-size:.95rem;line-height:1.7;max-width:380px;">Create a free account to schedule marine cleaning at your marina, track service history, and set up recurring appointments.</p>
+      <ul style="margin-top:1.5rem;display:flex;flex-direction:column;gap:.6rem;list-style:none;">
+        <li style="display:flex;align-items:center;gap:.6rem;color:rgba(240,248,255,.75);font-size:.9rem;"><span style="color:var(--accent);">✓</span>Schedule cleaning at your slip</li>
+        <li style="display:flex;align-items:center;gap:.6rem;color:rgba(240,248,255,.75);font-size:.9rem;"><span style="color:var(--accent);">✓</span>Full service history & photos</li>
+        <li style="display:flex;align-items:center;gap:.6rem;color:rgba(240,248,255,.75);font-size:.9rem;"><span style="color:var(--accent);">✓</span>Set up recurring appointments</li>
+        <li style="display:flex;align-items:center;gap:.6rem;color:rgba(240,248,255,.75);font-size:.9rem;"><span style="color:var(--accent);">✓</span>10% loyalty discount</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="auth-panel">
+    <div class="auth-panel-inner">
+      <a href="index.html" class="auth-logo"><span style="width:30px;height:30px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;">⚓</span>CleanWave</a>
+      <h1 class="auth-heading">Create Account</h1>
+      <p class="auth-sub">Already a member? <a href="login.html">Sign in →</a></p>
+
+      <form id="reg-form">
+        <div class="name-row">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="James" required/></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Whitfield" required/></div>
+        </div>
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="captain@example.com" required/></div>
+        <div class="form-group"><label>Account Type</label>
+          <select required>
+            <option value="">Select your role…</option>
+            <option>Boat Owner</option>
+            <option>Yacht Owner</option>
+            <option>Marina Manager</option>
+            <option>Fleet Owner</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Password</label>
+          <div class="auth-input-wrap">
+            <input type="password" id="pw-reg" placeholder="Create a strong password" required/>
+            <button type="button" class="pw-eye" onclick="togglePw('pw-reg',this)">👁️</button>
+          </div>
+          <div class="strength-wrap"><div class="strength-bar"><div class="strength-fill" id="sw"></div></div><div class="strength-label" id="sl"></div></div>
+        </div>
+        <div class="form-group"><label>Confirm Password</label>
+          <div class="auth-input-wrap">
+            <input type="password" id="pw-reg2" placeholder="Repeat password" required/>
+            <button type="button" class="pw-eye" onclick="togglePw('pw-reg2',this)">👁️</button>
+          </div>
+        </div>
+        <label class="check-wrap"><input type="checkbox" id="terms-check" required/> I accept the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+        <label class="check-wrap"><input type="checkbox"/> Send me service updates & marine care tips</label>
+        <button type="submit" class="auth-btn" id="reg-submit">Create Account →</button>
+      </form>
+
+      <div class="auth-divider">or register with</div>
+      <div class="social-auth">
+        <button class="social-btn"><i class="fab fa-google si-google"></i> Continue with Google</button>
+        <button class="social-btn"><i class="fab fa-apple si-apple"></i> Continue with Apple</button>
+        <button class="social-btn"><i class="fas fa-envelope si-email"></i> Continue with Email</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+<script>
+function togglePw(id,btn){const i=document.getElementById(id);i.type=i.type==='password'?'text':'password';btn.textContent=i.type==='password'?'👁️':'🙈';}
+const pwReg=document.getElementById('pw-reg');
+if(pwReg){pwReg.addEventListener('input',()=>{const v=pwReg.value;let s=0;if(v.length>=8)s++;if(/[A-Z]/.test(v))s++;if(/[0-9]/.test(v))s++;if(/[^A-Za-z0-9]/.test(v))s++;const c=['#ef4444','#ef4444','#f59e0b','#22c55e','#16a34a'];const l=['','Weak','Fair','Good','Strong'];const sw=document.getElementById('sw');const sl=document.getElementById('sl');sw.style.width=(s*25)+'%';sw.style.background=c[s];sl.textContent=l[s]||'';});}
+const rf=document.getElementById('reg-form');
+rf&&rf.addEventListener('submit',e=>{e.preventDefault();if(!document.getElementById('terms-check').checked){alert('Please accept Terms & Conditions');return;}const b=document.getElementById('reg-submit');b.textContent='Creating Account…';setTimeout(()=>{window.location.href='dashboard.html';},1500);});
+</script>
+</body>
+</html>

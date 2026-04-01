@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Blog · CleanWave</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+<div id="nav-inject"></div>
+
+<!-- HERO -->
+<section class="hero" style="background-image:url('https://images.unsplash.com/photo-1559159529-79e1e7d3d38c?w=1800&q=80');min-height:55vh;">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-label">Marine Care Knowledge</span>
+    <h1 class="hero-title" style="font-size:clamp(2.5rem,5vw,4.5rem);">The CleanWave <em>Blog</em></h1>
+    <p class="hero-sub">Expert tips, maintenance guides, and industry insights for boat and yacht owners.</p>
+  </div>
+</section>
+
+<!-- FILTER -->
+<section style="background:var(--bg);padding:3rem 2rem 0;">
+  <div class="section-inner">
+    <div style="display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center;" class="reveal">
+      <button class="filter-btn active btn btn-dark" data-filter="all" style="font-size:.6rem;">All Posts</button>
+      <button class="filter-btn btn btn-dark" data-filter="tips" style="font-size:.6rem;">Care Tips</button>
+      <button class="filter-btn btn btn-dark" data-filter="maintenance" style="font-size:.6rem;">Maintenance</button>
+      <button class="filter-btn btn btn-dark" data-filter="products" style="font-size:.6rem;">Products</button>
+      <button class="filter-btn btn btn-dark" data-filter="news" style="font-size:.6rem;">Industry News</button>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG GRID -->
+<section style="background:var(--bg);padding:3rem 2rem 6rem;">
+  <div class="section-inner">
+    <div class="blog-grid">
+      <div class="blog-card reveal stagger-1" data-cat="tips">
+        <div class="blog-img"><img src="https://images.unsplash.com/photo-1559159529-79e1e7d3d38c?w=600&q=80" alt="Teak care"/></div>
+        <div class="blog-body"><span class="blog-tag">Care Tips</span><h3>How to Restore Teak Decking in 5 Steps</h3><p>Weathered teak doesn't have to be a lost cause. Our step-by-step guide walks you through the cleaning, brightening, and oiling process...</p><div class="blog-meta">May 14, 2025 · 6 min read</div></div>
+      </div>
+      <div class="blog-card reveal stagger-2" data-cat="maintenance">
+        <div class="blog-img"><img src="https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?w=600&q=80" alt="Hull maintenance"/></div>
+        <div class="blog-body"><span class="blog-tag">Maintenance</span><h3>The Boat Owner's Seasonal Maintenance Calendar</h3><p>Spring commissioning, summer upkeep, fall storage prep — a complete month-by-month guide to keeping your vessel in peak condition...</p><div class="blog-meta">Apr 28, 2025 · 9 min read</div></div>
+      </div>
+      <div class="blog-card reveal stagger-3" data-cat="products">
+        <div class="blog-img"><img src="https://images.unsplash.com/photo-1580852300654-03c803a14e24?w=600&q=80" alt="Marine products"/></div>
+        <div class="blog-body"><span class="blog-tag">Products</span><h3>Top 7 Eco-Friendly Marine Cleaning Products for 2025</h3><p>We tested dozens of ocean-safe products so you don't have to. Here are our top picks for hull wash, teak treatment, and glass polish...</p><div class="blog-meta">Apr 10, 2025 · 7 min read</div></div>
+      </div>
+      <div class="blog-card reveal stagger-1" data-cat="tips">
+        <div class="blog-img"><img src="https://images.unsplash.com/photo-1606315065284-8e9600bd4f66?w=600&q=80" alt="Interior cleaning"/></div>
+        <div class="blog-body"><span class="blog-tag">Care Tips</span><h3>Eliminating Mold and Mildew from Boat Interiors</h3><p>Humidity and salt air are a mold-growth combination. Learn how to prevent, treat, and permanently eliminate mildew below deck...</p><div class="blog-meta">Mar 22, 2025 · 5 min read</div></div>
+      </div>
+      <div class="blog-card reveal stagger-2" data-cat="news">
+        <div class="blog-img"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80" alt="Marina news"/></div>
+        <div class="blog-body"><span class="blog-tag">Industry News</span><h3>New EPA Regulations for Marina Wastewater in 2025</h3><p>The latest EPA guidelines affect how boat detailers must manage rinse water at marinas. Here's what owners and services need to know...</p><div class="blog-meta">Mar 5, 2025 · 4 min read</div></div>
+      </div>
+      <div class="blog-card reveal stagger-3" data-cat="maintenance">
+        <div class="blog-img"><img src="https://images.unsplash.com/photo-1614165516036-bc18a6c2c73f?w=600&q=80" alt="Stainless polish"/></div>
+        <div class="blog-body"><span class="blog-tag">Maintenance</span><h3>Keeping Stainless Steel Bright on a Salt-Water Boat</h3><p>Salt air attacks stainless constantly. These expert polishing and protection techniques will keep your rails and hardware gleaming...</p><div class="blog-meta">Feb 18, 2025 · 6 min read</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="section-inner">
+    <h2 class="reveal">Put the Tips Into Practice</h2>
+    <p class="reveal">Let the professionals handle it. Book your detail and see the difference.</p>
+    <a href="services.html" class="btn reveal"><span>Book a Service →</span></a>
+  </div>
+</section>
+
+<div id="footer-inject"></div>
+<script src="components.js"></script><script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contact · CleanWave</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+<div id="nav-inject"></div>
+
+<!-- HERO -->
+<section class="hero" style="background-image:url('https://images.unsplash.com/photo-1516307365426-bea591f05011?w=1800&q=80');min-height:55vh;">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-label">Get in Touch</span>
+    <h1 class="hero-title" style="font-size:clamp(2.5rem,5vw,4.5rem);">Let's Talk <em>Clean</em></h1>
+    <p class="hero-sub">Request a quote, ask a question, or book your first service. We respond within 2 hours.</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section style="background:var(--bg)">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <!-- INFO CARDS -->
+      <div>
+        <span class="section-label reveal">Contact Info</span>
+        <h2 class="section-title reveal" style="margin-bottom:2rem;">Find Us<br/><em style="color:var(--accent);font-style:italic">Here</em></h2>
+        <div class="contact-card reveal"><div class="contact-icon">📍</div><div><h4>Studio Address</h4><p>Pier 39, Marina Bay, San Francisco, CA 94107</p></div></div>
+        <div class="contact-card reveal"><div class="contact-icon">📞</div><div><h4>Phone</h4><p>+1 (888) 204-BOAT</p></div></div>
+        <div class="contact-card reveal"><div class="contact-icon">✉️</div><div><h4>Email</h4><p>hello@cleanwave.co</p></div></div>
+        <div class="contact-card reveal"><div class="contact-icon">⏰</div><div><h4>Service Hours</h4><p>Mon–Sat: 7am–7pm · Sun: 8am–5pm</p></div></div>
+        <div style="margin-top:2rem;" class="reveal">
+          <span class="section-label" style="margin-bottom:.8rem;display:block;">Follow Us</span>
+          <div class="social-row">
+            <a href="#" class="si si-fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="si si-ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="si si-tw" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="si si-li" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- FORM -->
+      <div class="reveal">
+        <span class="section-label">Send a Message</span>
+        <h2 class="section-title" style="margin-bottom:2rem;">Request a <em style="color:var(--accent);font-style:italic">Quote</em></h2>
+        <form id="contact-form">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div class="form-group"><label>First Name</label><input type="text" placeholder="James" required/></div>
+            <div class="form-group"><label>Last Name</label><input type="text" placeholder="Whitfield" required/></div>
+          </div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="james@example.com" required/></div>
+          <div class="form-group"><label>Phone</label><input type="tel" placeholder="+1 (555) 000-0000"/></div>
+          <div class="form-group"><label>Service Type</label>
+            <select>
+              <option value="">Select a service…</option>
+              <option>Exterior Wash</option>
+              <option>Full Detail (Captain)</option>
+              <option>Yacht Spa (Commodore)</option>
+              <option>Teak Treatment</option>
+              <option>Interior Clean</option>
+              <option>Custom / Fleet</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Marina / Location</label><input type="text" placeholder="Pier 39, San Francisco"/></div>
+          <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your boat, its length, and any specific needs…"></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;"><span>Send Message →</span></button>
+        </form>
+      </div>
+    </div>
+    <!-- MAP -->
+    <div class="map-wrap reveal" style="margin-top:4rem;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.9!2d-122.41!3d37.81!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580f0a3c79cdf%3A0x8a9e1ec32c0f4b8e!2sPier+39%2C+San+Francisco%2C+CA!5e0!3m2!1sen!2sus!4v1700000000000" width="100%" height="400" style="border:0;display:block;filter:saturate(.7) contrast(1.1);" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="section-inner">
+    <h2 class="reveal">Prefer to Book Directly?</h2>
+    <p class="reveal">Create a free account and schedule your clean in minutes through the owner dashboard.</p>
+    <a href="register.html" class="btn reveal"><span>Create Free Account →</span></a>
+  </div>
+</section>
+
+<div id="footer-inject"></div>
+<script src="components.js"></script><script src="main.js"></script>
+</body>
+</html>

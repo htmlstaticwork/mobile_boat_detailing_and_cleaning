@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Dashboard · CleanWave</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="dashboard.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+<div class="cursor"></div><div class="cursor-ring"></div>
+
+<div class="dash-layout">
+<!-- SIDEBAR -->
+<aside class="dash-sidebar" id="dash-sidebar">
+  <div class="sidebar-logo">
+    <div class="sidebar-logo-icon">⚓</div>
+    <span class="sidebar-logo-text">CleanWave</span>
+  </div>
+  <nav class="sidebar-nav">
+    <span class="sidebar-section-label">Main</span>
+    <a href="#overview" class="active" onclick="showSection('overview',this)"><span class="nav-icon">📊</span>Overview</a>
+    <a href="#schedule" onclick="showSection('schedule',this)"><span class="nav-icon">📅</span>Schedule Service</a>
+    <a href="#history" onclick="showSection('history',this)"><span class="nav-icon">🕒</span>Service History</a>
+    <a href="#recurring" onclick="showSection('recurring',this)"><span class="nav-icon">🔄</span>Recurring Services</a>
+    <span class="sidebar-section-label">My Fleet</span>
+    <a href="#boats" onclick="showSection('boats',this)"><span class="nav-icon">⛵</span>My Boats</a>
+    <span class="sidebar-section-label">Account</span>
+    <a href="#profile" onclick="showSection('profile',this)"><span class="nav-icon">👤</span>Profile Settings</a>
+  </nav>
+  <div class="sidebar-bottom">
+    <div class="sidebar-user">
+      <div class="user-avatar">JW</div>
+      <div class="user-info"><h4>James Whitfield</h4><p>Boat Owner</p></div>
+    </div>
+    <button class="logout-btn" onclick="window.location.href='login.html'">
+      <i class="fas fa-sign-out-alt"></i> Sign Out
+    </button>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="dash-main">
+  <!-- TOPBAR -->
+  <div class="dash-topbar">
+    <div class="topbar-left">
+      <h1 id="page-heading">Boat Owner Dashboard</h1>
+      <p id="page-sub">Welcome back, James! Your next service is on June 18.</p>
+    </div>
+    <div class="topbar-right">
+      <button class="nav-btn rtl-btn" title="Toggle RTL" style="width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:none;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.8rem;">⇄<span class="rtl-lbl" style="font-size:.5rem;font-family:'Space Mono',monospace;">RTL</span></button>
+      <button class="nav-btn theme-btn" title="Toggle Theme" style="width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:none;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;">☀️</button>
+      <div class="topbar-btn" title="Notifications" style="cursor:pointer;"><i class="fas fa-bell"></i><div class="badge">3</div></div>
+      <div class="topbar-btn" style="background:var(--accent);color:var(--primary);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;cursor:pointer;">JW</div>
+    </div>
+  </div>
+
+  <!-- CONTENT SECTIONS -->
+  <div class="dash-content">
+
+    <!-- ── OVERVIEW ── -->
+    <section id="section-overview">
+      <div class="metrics-grid">
+        <div class="metric-card reveal"><div class="metric-icon">🛥️</div><div class="metric-val" data-target="3" data-suffix="">0</div><div class="metric-label">Registered Boats</div><div class="metric-change">+1 this year</div></div>
+        <div class="metric-card reveal stagger-1"><div class="metric-icon">✅</div><div class="metric-val" data-target="24" data-suffix="">0</div><div class="metric-label">Services Completed</div><div class="metric-change">+4 this quarter</div></div>
+        <div class="metric-card reveal stagger-2"><div class="metric-icon">📅</div><div class="metric-val" style="font-size:1.5rem;padding-top:.4rem">Jun 18</div><div class="metric-label">Next Appointment</div><div class="metric-change">Captain Package</div></div>
+        <div class="metric-card reveal stagger-3"><div class="metric-icon">⭐</div><div class="metric-val" data-target="240" data-suffix="pts">0pts</div><div class="metric-label">Loyalty Points</div><div class="metric-change">+30 this month</div></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:1.5rem;">
+        <div class="dash-card reveal">
+          <div class="dash-card-header"><h3>Upcoming Appointments</h3><span class="status status-scheduled">2 Scheduled</span></div>
+          <table class="data-table">
+            <thead><tr><th>Date</th><th>Boat</th><th>Service</th><th>Marina</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Jun 18, 2025</td><td>S/V Horizon</td><td>Captain Package</td><td>Pier 39</td><td><span class="status status-scheduled">Scheduled</span></td></tr>
+              <tr><td>Jul 2, 2025</td><td>M/Y Azure</td><td>Exterior Wash</td><td>Marina Bay</td><td><span class="status status-pending">Pending</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="dash-card reveal stagger-1">
+          <div class="dash-card-header"><h3>June Calendar</h3></div>
+          <div class="cal-header">
+            <div class="cal-day-name">Su</div><div class="cal-day-name">Mo</div><div class="cal-day-name">Tu</div><div class="cal-day-name">We</div><div class="cal-day-name">Th</div><div class="cal-day-name">Fr</div><div class="cal-day-name">Sa</div>
+          </div>
+          <div class="cal-grid"></div>
+        </div>
+      </div>
+
+      <div class="dash-card reveal" style="margin-top:1.5rem">
+        <div class="dash-card-header"><h3>Recent Activity</h3><a href="#" onclick="showSection('history',document.querySelector('[href=\'#history\']'))" style="font-size:.78rem;color:var(--accent);text-decoration:none;">View All →</a></div>
+        <table class="data-table">
+          <thead><tr><th>Date</th><th>Service</th><th>Boat</th><th>Technician</th><th>Amount</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>May 30</td><td>Captain Package</td><td>S/V Horizon</td><td>Marco R.</td><td>$599</td><td><span class="status status-success">Complete</span></td></tr>
+            <tr><td>May 3</td><td>Teak Treatment</td><td>M/Y Azure</td><td>Sofia K.</td><td>$299</td><td><span class="status status-success">Complete</span></td></tr>
+            <tr><td>Apr 12</td><td>Exterior Wash</td><td>S/V Horizon</td><td>Marco R.</td><td>$149</td><td><span class="status status-success">Complete</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── SCHEDULE ── -->
+    <section id="section-schedule" style="display:none">
+      <div class="dash-card reveal">
+        <div class="dash-card-header"><h3>Book a New Service</h3></div>
+        <div class="dash-form">
+          <div class="form-row">
+            <div class="form-group"><label>Select Boat</label><select><option>S/V Horizon (42ft Sailboat)</option><option>M/Y Azure (38ft Motor Yacht)</option><option>Power 28 (28ft Powerboat)</option></select></div>
+            <div class="form-group"><label>Service Package</label><select><option>Skipper — $299</option><option selected>Captain — $599</option><option>Commodore — $999</option><option>Exterior Wash — $149</option><option>Teak Treatment — $299</option></select></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Preferred Date</label><input type="date"/></div>
+            <div class="form-group"><label>Preferred Time</label><select><option>7:00 AM</option><option>9:00 AM</option><option selected>11:00 AM</option><option>1:00 PM</option><option>3:00 PM</option></select></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Marina / Location</label><select><option>Pier 39 – San Francisco</option><option>Marina Bay – Oakland</option><option>Sausalito Marina</option><option>Berkeley Marina</option></select></div>
+            <div class="form-group"><label>Slip Number</label><input type="text" placeholder="e.g. B-42"/></div>
+          </div>
+          <div class="form-group"><label>Special Requests</label><textarea placeholder="Any specific areas of concern, access instructions, or special requirements…" style="min-height:100px;"></textarea></div>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem;">
+            <button class="btn btn-primary" style="border:none;cursor:pointer;"><span>Confirm Booking →</span></button>
+            <button class="btn btn-dark" style="cursor:pointer;"><span>Save as Draft</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="dash-card reveal" style="margin-top:1.5rem;">
+        <div class="dash-card-header"><h3>Available Slots — June 2025</h3></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.8rem;margin-top:.5rem;">
+          <div style="border:1px solid var(--accent);padding:.8rem;text-align:center;cursor:pointer;background:var(--accent-10)"><div style="font-family:'DM Serif Display',serif;font-size:1.1rem;">Jun 18</div><div style="font-size:.75rem;color:var(--text-muted);">11:00 AM</div><div style="font-size:.7rem;color:var(--accent);margin-top:.3rem;">Available</div></div>
+          <div style="border:1px solid var(--border);padding:.8rem;text-align:center;cursor:pointer;"><div style="font-family:'DM Serif Display',serif;font-size:1.1rem;">Jun 20</div><div style="font-size:.75rem;color:var(--text-muted);">9:00 AM</div><div style="font-size:.7rem;color:var(--accent);margin-top:.3rem;">Available</div></div>
+          <div style="border:1px solid var(--border);padding:.8rem;text-align:center;cursor:pointer;"><div style="font-family:'DM Serif Display',serif;font-size:1.1rem;">Jun 22</div><div style="font-size:.75rem;color:var(--text-muted);">7:00 AM</div><div style="font-size:.7rem;color:var(--accent);margin-top:.3rem;">Available</div></div>
+          <div style="border:1px solid var(--border);padding:.8rem;text-align:center;cursor:pointer;opacity:.5;"><div style="font-family:'DM Serif Display',serif;font-size:1.1rem;">Jun 24</div><div style="font-size:.75rem;color:var(--text-muted);">All Day</div><div style="font-size:.7rem;color:#ef4444;margin-top:.3rem;">Booked Out</div></div>
+          <div style="border:1px solid var(--border);padding:.8rem;text-align:center;cursor:pointer;"><div style="font-family:'DM Serif Display',serif;font-size:1.1rem;">Jun 26</div><div style="font-size:.75rem;color:var(--text-muted);">1:00 PM</div><div style="font-size:.7rem;color:var(--accent);margin-top:.3rem;">Available</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HISTORY ── -->
+    <section id="section-history" style="display:none">
+      <div class="dash-card reveal">
+        <div class="dash-card-header"><h3>Service History</h3><span style="font-size:.78rem;color:var(--text-muted);">24 total services</span></div>
+        <table class="data-table">
+          <thead><tr><th>Date</th><th>Service</th><th>Boat</th><th>Technician</th><th>Marina</th><th>Amount</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>May 30, 2025</td><td>Captain Package</td><td>S/V Horizon</td><td>Marco R.</td><td>Pier 39</td><td>$599</td><td><span class="status status-success">Complete</span></td></tr>
+            <tr><td>May 3, 2025</td><td>Teak Treatment</td><td>M/Y Azure</td><td>Sofia K.</td><td>Marina Bay</td><td>$299</td><td><span class="status status-success">Complete</span></td></tr>
+            <tr><td>Apr 12, 2025</td><td>Exterior Wash</td><td>S/V Horizon</td><td>Marco R.</td><td>Pier 39</td><td>$149</td><td><span class="status status-success">Complete</span></td></tr>
+            <tr><td>Mar 28, 2025</td><td>Commodore Package</td><td>M/Y Azure</td><td>Team</td><td>Marina Bay</td><td>$999</td><td><span class="status status-success">Complete</span></td></tr>
+            <tr><td>Mar 8, 2025</td><td>Interior Clean</td><td>Power 28</td><td>Lena M.</td><td>Berkeley</td><td>$249</td><td><span class="status status-success">Complete</span></td></tr>
+            <tr><td>Feb 14, 2025</td><td>Captain Package</td><td>S/V Horizon</td><td>Marco R.</td><td>Pier 39</td><td>$599</td><td><span class="status status-success">Complete</span></td></tr>
+          </tbody>
+        </table>
+        <div style="margin-top:2rem;">
+          <h4 style="font-family:'DM Serif Display',serif;margin-bottom:1rem;">Spending by Category</h4>
+          <div style="display:flex;flex-direction:column;gap:.8rem;">
+            <div><div style="display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:.3rem;"><span>Full Detail Packages</span><span style="color:var(--accent);">$2,394</span></div><div class="progress-bar"><div class="progress-fill" data-width="72%" style="width:0%"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:.3rem;"><span>Exterior Services</span><span style="color:var(--accent);">$895</span></div><div class="progress-bar"><div class="progress-fill" data-width="45%" style="width:0%"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:.3rem;"><span>Interior & Teak</span><span style="color:var(--accent);">$548</span></div><div class="progress-bar"><div class="progress-fill" data-width="28%" style="width:0%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RECURRING ── -->
+    <section id="section-recurring" style="display:none">
+      <div class="dash-card reveal">
+        <div class="dash-card-header"><h3>Recurring Appointments</h3><button class="btn btn-primary" style="border:none;cursor:pointer;font-size:.6rem;padding:.5rem 1rem;"><span>+ Add Recurring</span></button></div>
+        <div class="recur-card reveal">
+          <span class="recur-icon">🛥️</span>
+          <div style="flex:1"><div class="recur-name">Monthly Exterior Wash — S/V Horizon</div><div class="recur-detail">Every 1st Monday · Pier 39 · $149/mo · Next: Jul 7</div></div>
+          <div style="display:flex;align-items:center;gap:1rem;"><span class="status status-success">Active</span><div class="toggle-switch on" title="Toggle active"></div></div>
+        </div>
+        <div class="recur-card reveal stagger-1">
+          <span class="recur-icon">⛵</span>
+          <div style="flex:1"><div class="recur-name">Bi-Monthly Full Detail — M/Y Azure</div><div class="recur-detail">Every 2nd month · Marina Bay · $599/service · Next: Jul 15</div></div>
+          <div style="display:flex;align-items:center;gap:1rem;"><span class="status status-success">Active</span><div class="toggle-switch on" title="Toggle active"></div></div>
+        </div>
+        <div class="recur-card reveal stagger-2">
+          <span class="recur-icon">🚤</span>
+          <div style="flex:1"><div class="recur-name">Quarterly Teak Treatment — Power 28</div><div class="recur-detail">Every 3 months · Berkeley Marina · $299/service · Next: Aug 20</div></div>
+          <div style="display:flex;align-items:center;gap:1rem;"><span class="status status-pending">Paused</span><div class="toggle-switch" title="Toggle active"></div></div>
+        </div>
+        <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);">
+          <h4 style="font-family:'DM Serif Display',serif;margin-bottom:.5rem;">Loyalty Savings</h4>
+          <p style="font-size:.88rem;color:var(--text-muted);">Recurring services earn 10% discount + 30 loyalty points per service. Current balance: <strong style="color:var(--accent);">240 points</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BOATS ── -->
+    <section id="section-boats" style="display:none">
+      <div class="dash-card reveal">
+        <div class="dash-card-header"><h3>My Fleet</h3><button class="btn btn-primary" style="border:none;cursor:pointer;font-size:.6rem;padding:.5rem 1rem;"><span>+ Add Boat</span></button></div>
+        <div class="boat-card reveal"><div class="boat-info"><div class="boat-icon-wrap">⛵</div><div><div class="boat-name">S/V Horizon</div><div class="boat-detail">42ft Catalina Sailboat · Slip B-14 · Pier 39, SF</div></div></div><div class="boat-actions"><button class="action-btn">Edit</button><button class="action-btn">History</button><button class="action-btn danger">Remove</button></div></div>
+        <div class="boat-card reveal stagger-1"><div class="boat-info"><div class="boat-icon-wrap">🛥️</div><div><div class="boat-name">M/Y Azure</div><div class="boat-detail">38ft Sea Ray Motor Yacht · Slip C-7 · Marina Bay, Oakland</div></div></div><div class="boat-actions"><button class="action-btn">Edit</button><button class="action-btn">History</button><button class="action-btn danger">Remove</button></div></div>
+        <div class="boat-card reveal stagger-2"><div class="boat-info"><div class="boat-icon-wrap">🚤</div><div><div class="boat-name">Power 28</div><div class="boat-detail">28ft Boston Whaler · Slip A-3 · Berkeley Marina</div></div></div><div class="boat-actions"><button class="action-btn">Edit</button><button class="action-btn">History</button><button class="action-btn danger">Remove</button></div></div>
+      </div>
+    </section>
+
+    <!-- ── PROFILE ── -->
+    <section id="section-profile" style="display:none">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;" class="reveal">
+        <div class="dash-card"><div class="dash-card-header"><h3>Personal Info</h3></div>
+          <div class="form-group"><label>Full Name</label><input type="text" value="James Whitfield"/></div>
+          <div class="form-group"><label>Email</label><input type="email" value="james@example.com"/></div>
+          <div class="form-group"><label>Phone</label><input type="tel" value="+1 (415) 555-0182"/></div>
+          <div class="form-group"><label>Home Marina</label><select><option selected>Pier 39, San Francisco</option><option>Marina Bay, Oakland</option><option>Berkeley Marina</option></select></div>
+          <button class="btn btn-primary" style="border:none;cursor:pointer;margin-top:.5rem;"><span>Save Changes</span></button>
+        </div>
+        <div class="dash-card"><div class="dash-card-header"><h3>Change Password</h3></div>
+          <div class="form-group"><label>Current Password</label><input type="password" placeholder="••••••••"/></div>
+          <div class="form-group"><label>New Password</label><input type="password" placeholder="••••••••"/></div>
+          <div class="form-group"><label>Confirm New</label><input type="password" placeholder="••••••••"/></div>
+          <button class="btn btn-primary" style="border:none;cursor:pointer;margin-top:.5rem;"><span>Update Password</span></button>
+          <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);">
+            <h4 style="font-family:'DM Serif Display',serif;margin-bottom:.5rem;font-size:1rem;">Notifications</h4>
+            <div style="display:flex;flex-direction:column;gap:.6rem;margin-top:.5rem;">
+              <label style="display:flex;align-items:center;gap:.5rem;font-size:.88rem;cursor:pointer;"><input type="checkbox" checked style="accent-color:var(--accent)"/> Service reminders (24hr before)</label>
+              <label style="display:flex;align-items:center;gap:.5rem;font-size:.88rem;cursor:pointer;"><input type="checkbox" checked style="accent-color:var(--accent)"/> Service completion reports</label>
+              <label style="display:flex;align-items:center;gap:.5rem;font-size:.88rem;cursor:pointer;"><input type="checkbox" style="accent-color:var(--accent)"/> Promotional offers</label>
+              <label style="display:flex;align-items:center;gap:.5rem;font-size:.88rem;cursor:pointer;"><input type="checkbox" checked style="accent-color:var(--accent)"/> Recurring appointment alerts</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dash-card reveal" style="margin-top:1.5rem;">
+        <div class="dash-card-header"><h3>Loyalty Program</h3></div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;text-align:center;">
+          <div><div style="font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--accent);" data-target="240" data-suffix="">0</div><div style="font-size:.78rem;color:var(--text-muted);">Current Points</div></div>
+          <div><div style="font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--accent);">Silver</div><div style="font-size:.78rem;color:var(--text-muted);">Current Tier</div></div>
+          <div><div style="font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--accent);">260</div><div style="font-size:.78rem;color:var(--text-muted);">Points to Gold</div></div>
+        </div>
+        <div style="margin-top:1.5rem;"><div style="display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:.4rem;"><span>Progress to Gold</span><span style="color:var(--accent);">240 / 500</span></div><div class="progress-bar"><div class="progress-fill" data-width="48%" style="width:0%"></div></div></div>
+      </div>
+    </section>
+
+  </div><!-- /dash-content -->
+</main>
+</div><!-- /dash-layout -->
+
+<button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+
+<script src="main.js"></script>
+<script>
+function showSection(id, el){
+  document.querySelectorAll('.dash-content section').forEach(s=>s.style.display='none');
+  const sec=document.getElementById('section-'+id);if(sec)sec.style.display='block';
+  document.querySelectorAll('.sidebar-nav a').forEach(a=>a.classList.remove('active'));
+  if(el)el.classList.add('active');
+  const headings={overview:'Boat Owner Dashboard',schedule:'Schedule a Service',history:'Service History',recurring:'Recurring Services',boats:'My Fleet',profile:'Profile Settings'};
+  const subs={overview:'Welcome back, James! Your next service is on June 18.',schedule:'Book your next cleaning appointment at your marina.',history:'View all past services, reports, and spending.',recurring:'Manage your automatic recurring service schedule.',boats:'Manage your registered vessels and their details.',profile:'Update your account info, password, and preferences.'};
+  document.getElementById('page-heading').textContent=headings[id]||'Dashboard';
+  document.getElementById('page-sub').textContent=subs[id]||'';
+  // re-trigger reveals
+  setTimeout(()=>{document.querySelectorAll('.reveal').forEach(el=>{const obs=new IntersectionObserver(e=>{e.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});});obs.observe(el);});},50);
+  return false;
+}
+// toggle sidebar
+const sbt=document.getElementById('sidebar-toggle'),dsb=document.getElementById('dash-sidebar');
+sbt&&sbt.addEventListener('click',()=>dsb&&dsb.classList.toggle('open'));
+// toggle switches
+document.querySelectorAll('.toggle-switch').forEach(t=>t.addEventListener('click',()=>t.classList.toggle('on')));
+</script>
+</body>
+</html>

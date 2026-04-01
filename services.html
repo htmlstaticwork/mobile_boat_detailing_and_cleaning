@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Services & Pricing · CleanWave</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+.faq-item{border-bottom:1px solid var(--border);overflow:hidden;}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 0;cursor:pointer;font-family:'DM Serif Display',serif;font-size:1.1rem;}
+.faq-q::after{content:'+';color:var(--accent);font-size:1.4rem;transition:transform .3s;}
+.faq-item.open .faq-q::after{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:1.2rem;}
+.faq-a p{color:var(--text-muted);line-height:1.7;font-size:.95rem;}
+</style>
+</head>
+<body>
+<div id="nav-inject"></div>
+
+<!-- HERO -->
+<section class="hero" style="background-image:url('https://images.unsplash.com/photo-1564156280315-1d42b4651629?w=1800&q=80');min-height:60vh;">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-label">Transparent Pricing</span>
+    <h1 class="hero-title" style="font-size:clamp(2.5rem,5vw,4.5rem);">Services & <em>Packages</em></h1>
+    <p class="hero-sub">Every service listed with clear, upfront pricing. No hidden charges. No surprises.</p>
+  </div>
+</section>
+
+<!-- SERVICE CARDS -->
+<section style="background:var(--bg)">
+  <div class="section-inner">
+    <div class="text-center reveal">
+      <span class="section-label">All Services</span>
+      <h2 class="section-title">Choose Your <em style="color:var(--accent);font-style:italic">Clean</em></h2>
+    </div>
+    <div class="cards-grid">
+      <div class="card reveal stagger-1"><div class="card-icon">🚿</div><h3>Exterior Wash</h3><p>Hull wash, deck scrub, chrome polish, cockpit wipe-down. Salt and grime removal.</p><div style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--accent);margin:.8rem 0;">$149</div><a href="contact.html" class="btn btn-dark" style="font-size:.6rem"><span>Book Now</span></a></div>
+      <div class="card reveal stagger-2"><div class="card-icon">🪟</div><h3>Glass & Canvas</h3><p>Windshield polishing, canvas UV treatment, port light cleaning, dodger care.</p><div style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--accent);margin:.8rem 0;">$199</div><a href="contact.html" class="btn btn-dark" style="font-size:.6rem"><span>Book Now</span></a></div>
+      <div class="card reveal stagger-3"><div class="card-icon">✨</div><h3>Hull Wax & Buff</h3><p>Compound, machine polish, and carnauba wax. Removes oxidation and deep scratches.</p><div style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--accent);margin:.8rem 0;">$349</div><a href="contact.html" class="btn btn-dark" style="font-size:.6rem"><span>Book Now</span></a></div>
+      <div class="card reveal stagger-4"><div class="card-icon">🪵</div><h3>Teak Treatment</h3><p>Teak cleaner, brightener, and premium teak oil application. Restores natural color.</p><div style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--accent);margin:.8rem 0;">$299</div><a href="contact.html" class="btn btn-dark" style="font-size:.6rem"><span>Book Now</span></a></div>
+      <div class="card reveal stagger-1"><div class="card-icon">🛋️</div><h3>Interior Clean</h3><p>Deep clean cabin, upholstery steam, bilge wash, head sanitize, odor elimination.</p><div style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--accent);margin:.8rem 0;">$249</div><a href="contact.html" class="btn btn-dark" style="font-size:.6rem"><span>Book Now</span></a></div>
+      <div class="card reveal stagger-2"><div class="card-icon">⚙️</div><h3>Engine Bay</h3><p>Engine compartment degreasing, bilge treatment, and all-surface wipe-down below.</p><div style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--accent);margin:.8rem 0;">$179</div><a href="contact.html" class="btn btn-dark" style="font-size:.6rem"><span>Book Now</span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING PACKAGES -->
+<section style="background:var(--bg-alt)">
+  <div class="section-inner">
+    <div class="text-center reveal">
+      <span class="section-label">Packages</span>
+      <h2 class="section-title">Simple, <em style="color:var(--accent);font-style:italic">Flat-Rate</em> Plans</h2>
+      <p class="section-sub">Bundle and save. All packages include eco-friendly products and a digital service report.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal stagger-1">
+        <div class="card-icon" style="font-size:2rem;color:var(--accent)">⚓</div>
+        <h3 style="font-family:'DM Serif Display',serif;font-size:1.3rem;margin-top:.5rem">Skipper</h3>
+        <p style="font-size:.88rem;color:var(--text-muted);margin:.5rem 0">Best for day-sailors & weekenders</p>
+        <div class="price"><span class="price-amount" data-monthly="299" data-annual="239">$299</span><div class="price-period">per service</div></div>
+        <ul class="price-features">
+          <li>Exterior Hull Wash</li><li>Deck & Cockpit Scrub</li><li>Chrome & Glass Polish</li><li>Bilge Check</li><li>Digital Service Report</li>
+        </ul>
+        <a href="contact.html" class="btn btn-dark" style="width:100%;justify-content:center"><span>Select Plan</span></a>
+      </div>
+      <div class="pricing-card popular reveal stagger-2">
+        <div class="popular-badge">Most Popular</div>
+        <div class="card-icon" style="font-size:2rem;color:var(--accent)">🛥️</div>
+        <h3 style="font-family:'DM Serif Display',serif;font-size:1.3rem;margin-top:.5rem">Captain</h3>
+        <p style="font-size:.88rem;color:var(--text-muted);margin:.5rem 0">Complete interior & exterior care</p>
+        <div class="price"><span class="price-amount" data-monthly="599" data-annual="479">$599</span><div class="price-period">per service</div></div>
+        <ul class="price-features">
+          <li>Everything in Skipper</li><li>Hull Compound & Wax</li><li>Teak Treatment</li><li>Full Interior Detail</li><li>Before/After Photos</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center"><span>Select Plan</span></a>
+      </div>
+      <div class="pricing-card reveal stagger-3">
+        <div class="card-icon" style="font-size:2rem;color:var(--accent)">⛵</div>
+        <h3 style="font-family:'DM Serif Display',serif;font-size:1.3rem;margin-top:.5rem">Commodore</h3>
+        <p style="font-size:.88rem;color:var(--text-muted);margin:.5rem 0">For yachts demanding perfection</p>
+        <div class="price"><span class="price-amount" data-monthly="999" data-annual="799">$999</span><div class="price-period">per service</div></div>
+        <ul class="price-features">
+          <li>Everything in Captain</li><li>Canvas UV Protection</li><li>Engine Bay Detail</li><li>Priority Scheduling</li><li>Dedicated Technician</li>
+        </ul>
+        <a href="contact.html" class="btn btn-dark" style="width:100%;justify-content:center"><span>Select Plan</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--bg)">
+  <div class="section-inner" style="max-width:780px">
+    <div class="text-center reveal">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">Common <em style="color:var(--accent);font-style:italic">Questions</em></h2>
+    </div>
+    <div style="margin-top:3rem" class="reveal">
+      <div class="faq-item"><div class="faq-q">Do you service all marina locations?</div><div class="faq-a"><p>We currently service 40+ marinas across the Bay Area. Enter your marina in the booking form to check availability.</p></div></div>
+      <div class="faq-item"><div class="faq-q">How long does a full detail take?</div><div class="faq-a"><p>The Captain package takes 4–6 hours depending on vessel size. The Commodore package can take a full day for larger yachts.</p></div></div>
+      <div class="faq-item"><div class="faq-q">Are your products safe for fiberglass, gel coat, and teak?</div><div class="faq-a"><p>Yes. We use products specifically formulated for marine surfaces — safe for all hull materials, teak, canvas, and stainless steel.</p></div></div>
+      <div class="faq-item"><div class="faq-q">Can I set up recurring appointments?</div><div class="faq-a"><p>Absolutely. Through your boat owner dashboard you can schedule weekly, bi-weekly, or monthly recurring services with a 10% loyalty discount.</p></div></div>
+      <div class="faq-item"><div class="faq-q">What if I'm not satisfied?</div><div class="faq-a"><p>We offer a 100% satisfaction guarantee. If you're not happy, we'll return and re-service at no charge.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="section-inner">
+    <h2 class="reveal">Ready to Book?</h2>
+    <p class="reveal">Contact us for a custom quote on vessels over 60ft or for fleet packages.</p>
+    <a href="contact.html" class="btn reveal"><span>Get a Free Quote →</span></a>
+  </div>
+</section>
+
+<div id="footer-inject"></div>
+<script src="components.js"></script><script src="main.js"></script>
+</body>
+</html>
