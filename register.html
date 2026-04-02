@@ -8,15 +8,15 @@
 <style>
 body{cursor:default;}
 .cursor,.cursor-ring{display:none;}
-.auth-page{min-height:100vh;display:flex;}
-.auth-visual{flex:1;background-image:url('https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=1200&q=80');background-size:cover;background-position:center;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:3rem;}
+.auth-page{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--bg-alt);}
+.auth-visual{flex:1;background-image:url('https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=1200&q=80');background-size:cover;background-position:center;position:relative;display:none;flex-direction:column;justify-content:flex-end;padding:3rem;}
 .auth-visual::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,37,64,.95) 0%,rgba(10,37,64,.4) 60%,transparent 100%);}
 .auth-visual-content{position:relative;z-index:1;}
-.auth-panel{width:min(520px,100%);display:flex;flex-direction:column;justify-content:center;padding:2.5rem;background:var(--bg);overflow-y:auto;}
+.auth-panel{width:min(520px,95%);display:flex;flex-direction:column;justify-content:center;padding:2.5rem;background:var(--card-bg);border:1px solid var(--border);box-shadow:var(--shadow);border-radius:var(--radius);margin:2rem auto;}
 .auth-panel-inner{max-width:420px;width:100%;margin:0 auto;}
-.auth-logo{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--accent);text-decoration:none;display:flex;align-items:center;gap:.5rem;margin-bottom:2rem;}
-.auth-heading{font-family:'DM Serif Display',serif;font-size:2rem;margin-bottom:.4rem;}
-.auth-sub{font-size:.95rem;color:var(--text-muted);margin-bottom:2rem;}
+.auth-logo{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--text);text-decoration:none;display:flex;align-items:center;justify-content:center;gap:.5rem;margin-bottom:2rem;}
+.auth-heading{font-family:'DM Serif Display',serif;font-size:2rem;margin-bottom:.4rem;text-align:center;}
+.auth-sub{font-size:.95rem;color:var(--text-muted);margin-bottom:2rem;text-align:center;}
 .auth-sub a{color:var(--accent);text-decoration:none;}
 .auth-input-wrap{position:relative;}
 .auth-input-wrap input{padding-right:3rem;}
@@ -36,6 +36,8 @@ body{cursor:default;}
 .si-google{color:#EA4335;}
 .si-apple{color:var(--text);}
 .si-email{color:var(--accent);}
+.auth-footer-link{margin-top:2rem;text-align:center;font-size:.95rem;color:var(--text-muted);}
+.auth-footer-link a{color:var(--accent);text-decoration:none;font-weight:600;}
 .auth-corner{position:fixed;top:1.5rem;right:1.5rem;display:flex;gap:.5rem;z-index:10;}
 .auth-corner button{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--card-bg);color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:all .3s;}
 .auth-corner button:hover{border-color:var(--accent);}
@@ -55,32 +57,19 @@ body{cursor:default;}
 </div>
 
 <div class="auth-page">
-  <div class="auth-visual">
-    <div class="auth-visual-content">
-      <div style="font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem;">Join CleanWave</div>
-      <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);color:#fff;margin-bottom:.8rem;">Your Boat Deserves<br/><em style="color:var(--accent)">the Best Care</em></h2>
-      <p style="color:rgba(240,248,255,.65);font-size:.95rem;line-height:1.7;max-width:380px;">Create a free account to schedule marine cleaning at your marina, track service history, and set up recurring appointments.</p>
-      <ul style="margin-top:1.5rem;display:flex;flex-direction:column;gap:.6rem;list-style:none;">
-        <li style="display:flex;align-items:center;gap:.6rem;color:rgba(240,248,255,.75);font-size:.9rem;"><span style="color:var(--accent);">✓</span>Schedule cleaning at your slip</li>
-        <li style="display:flex;align-items:center;gap:.6rem;color:rgba(240,248,255,.75);font-size:.9rem;"><span style="color:var(--accent);">✓</span>Full service history & photos</li>
-        <li style="display:flex;align-items:center;gap:.6rem;color:rgba(240,248,255,.75);font-size:.9rem;"><span style="color:var(--accent);">✓</span>Set up recurring appointments</li>
-        <li style="display:flex;align-items:center;gap:.6rem;color:rgba(240,248,255,.75);font-size:.9rem;"><span style="color:var(--accent);">✓</span>10% loyalty discount</li>
-      </ul>
-    </div>
-  </div>
+  
 
   <div class="auth-panel">
     <div class="auth-panel-inner">
       <a href="index.html" class="auth-logo"><span style="width:30px;height:30px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;"><i class="fas fa-anchor" style="color:var(--primary);"></i></span>CleanWave</a>
       <h1 class="auth-heading">Create Account</h1>
-      <p class="auth-sub">Already a member? <a href="login.html">Sign in →</a></p>
 
       <form id="reg-form">
-        <div class="name-row">
-          <div class="form-group"><label>First Name</label><input type="text" placeholder="James" required/></div>
-          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Whitfield" required/></div>
-        </div>
-        <div class="form-group"><label>Email Address</label><input type="email" placeholder="captain@example.com" required/></div>
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="" required/></div>
+        
+                  <div class="form-group"><label>Last Name</label><input type="text" placeholder="" required/></div>
+
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="" required/></div>
         <div class="form-group"><label>Account Type</label>
           <select required>
             <option value="">Select your role…</option>
@@ -93,14 +82,14 @@ body{cursor:default;}
         </div>
         <div class="form-group"><label>Password</label>
           <div class="auth-input-wrap">
-            <input type="password" id="pw-reg" placeholder="Create a strong password" required/>
+            <input type="password" id="pw-reg" placeholder="" required/>
             <button type="button" class="pw-eye" onclick="togglePw('pw-reg',this)">👁️</button>
           </div>
           <div class="strength-wrap"><div class="strength-bar"><div class="strength-fill" id="sw"></div></div><div class="strength-label" id="sl"></div></div>
         </div>
         <div class="form-group"><label>Confirm Password</label>
           <div class="auth-input-wrap">
-            <input type="password" id="pw-reg2" placeholder="Repeat password" required/>
+            <input type="password" id="pw-reg2" placeholder="" required/>
             <button type="button" class="pw-eye" onclick="togglePw('pw-reg2',this)">👁️</button>
           </div>
         </div>
@@ -116,6 +105,8 @@ body{cursor:default;}
         <button class="social-btn"><i class="fas fa-envelope si-email"></i> Continue with Email</button>
       </div>
     </div>
+      <p class="auth-footer-link">Already a member? <a href="login.html">Sign in →</a></p>
+
   </div>
 </div>
 

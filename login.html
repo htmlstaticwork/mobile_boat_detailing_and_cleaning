@@ -8,15 +8,15 @@
 <style>
 body{cursor:default;}
 .cursor,.cursor-ring{display:none;}
-.auth-page{min-height:100vh;display:flex;}
-.auth-visual{flex:1;background-image:url('https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1200&q=80');background-size:cover;background-position:center;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:3rem;}
+.auth-page{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--bg-alt);}
+.auth-visual{flex:1;background-image:url('https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1200&q=80');background-size:cover;background-position:center;position:relative;display:none;flex-direction:column;justify-content:flex-end;padding:3rem;}
 .auth-visual::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,37,64,.95) 0%,rgba(10,37,64,.4) 60%,transparent 100%);}
 .auth-visual-content{position:relative;z-index:1;}
-.auth-panel{width:min(480px,100%);display:flex;flex-direction:column;justify-content:center;padding:3rem 2.5rem;background:var(--bg);overflow-y:auto;}
+.auth-panel{width:min(480px,95%);display:flex;flex-direction:column;justify-content:center;padding:3rem 2.5rem;background:var(--card-bg);border:1px solid var(--border);box-shadow:var(--shadow);border-radius:var(--radius);margin:2rem auto;}
 .auth-panel-inner{max-width:380px;width:100%;margin:0 auto;}
-.auth-logo{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--accent);text-decoration:none;display:flex;align-items:center;gap:.5rem;margin-bottom:2.5rem;}
-.auth-heading{font-family:'DM Serif Display',serif;font-size:2rem;margin-bottom:.4rem;}
-.auth-sub{font-size:.95rem;color:var(--text-muted);margin-bottom:2rem;}
+.auth-logo{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--text);text-decoration:none;display:flex;align-items:center;justify-content:center;gap:.5rem;margin-bottom:2.5rem;}
+.auth-heading{font-family:'DM Serif Display',serif;font-size:2rem;margin-bottom:.4rem;text-align:center;}
+.auth-sub{font-size:.95rem;color:var(--text-muted);margin-bottom:2rem;text-align:center;}
 .auth-sub a{color:var(--accent);text-decoration:none;}
 .auth-input-wrap{position:relative;}
 .auth-input-wrap input{padding-right:3rem;}
@@ -36,6 +36,8 @@ body{cursor:default;}
 .social-btn .si-google{color:#EA4335;}
 .social-btn .si-apple{color:var(--text);}
 .social-btn .si-email{color:var(--accent);}
+.auth-footer-link{margin-top:2rem;text-align:center;font-size:.95rem;color:var(--text-muted);}
+.auth-footer-link a{color:var(--accent);text-decoration:none;font-weight:600;}
 .auth-corner{position:fixed;top:1.5rem;right:1.5rem;display:flex;gap:.5rem;z-index:10;}
 .auth-corner button{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--card-bg);color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:all .3s;}
 .auth-corner button:hover{border-color:var(--accent);}
@@ -48,37 +50,28 @@ body{cursor:default;}
 </head>
 <body>
 <!-- Corner icons -->
-<div class="auth-corner">
-  <button class="rtl-btn" aria-label="RTL">⇄<span class="rtl-lbl" style="font-size:.55rem;font-family:'Space Mono',monospace;margin-left:2px">RTL</span></button>
-  <button class="theme-btn" aria-label="Theme">☀️</button>
-</div>
+
 
 <div class="auth-page">
   <!-- VISUAL -->
-  <div class="auth-visual">
-    <div class="auth-visual-content">
-      <div style="font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem;">Owner Portal</div>
-      <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);color:#fff;margin-bottom:.8rem;">Schedule, Track &<br/><em style="color:var(--accent)">Manage Your Fleet</em></h2>
-      <p style="color:rgba(240,248,255,.65);font-size:.95rem;line-height:1.7;max-width:380px;">Sign into your CleanWave dashboard to manage bookings, view service history, and set up recurring appointments at your marina.</p>
-      <div style="display:flex;gap:2rem;margin-top:2rem;">
-        <div><div style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--accent);">1,200+</div><div style="font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(240,248,255,.4);">Active Owners</div></div>
-        <div><div style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--accent);">40+</div><div style="font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(240,248,255,.4);">Marinas</div></div>
-      </div>
-    </div>
-  </div>
+  
 
   <!-- FORM PANEL -->
   <div class="auth-panel">
+    
     <div class="auth-panel-inner">
+      <div class="auth-corner">
+  <button class="rtl-btn" aria-label="RTL">⇄<span class="rtl-lbl" style="font-size:.55rem;font-family:'Space Mono',monospace;margin-left:2px">RTL</span></button>
+  <button class="theme-btn" aria-label="Theme">☀️</button>
+</div>
       <a href="index.html" class="auth-logo"><span style="width:30px;height:30px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;"><i class="fas fa-anchor" style="color:var(--primary);"></i></span>CleanWave</a>
       <h1 class="auth-heading">Welcome Back</h1>
-      <p class="auth-sub">Don't have an account? <a href="register.html">Register free →</a></p>
 
       <form id="login-form">
-        <div class="form-group"><label>Email Address</label><input type="email" placeholder="captain@example.com" required/></div>
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="" required/></div>
         <div class="form-group"><label>Password</label>
           <div class="auth-input-wrap">
-            <input type="password" id="pw-login" placeholder="••••••••" required/>
+            <input type="password" id="pw-login" placeholder="" required/>
             <button type="button" class="pw-eye" onclick="togglePw('pw-login',this)">👁️</button>
           </div>
         </div>
@@ -95,10 +88,9 @@ body{cursor:default;}
         <button class="social-btn"><i class="fab fa-apple si-apple"></i> Continue with Apple</button>
         <button class="social-btn"><i class="fas fa-envelope si-email"></i> Continue with Email</button>
       </div>
+      <p class="auth-footer-link">Don't have an account? <a href="register.html">Register free →</a></p>
 
-      <p style="margin-top:1.5rem;font-size:.78rem;color:var(--text-muted);text-align:center;">
-        By signing in you agree to our <a href="#" style="color:var(--accent);text-decoration:none">Terms</a> and <a href="#" style="color:var(--accent);text-decoration:none">Privacy Policy</a>.
-      </p>
+      
     </div>
   </div>
 </div>
