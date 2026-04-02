@@ -1,18 +1,9 @@
 /* ── SHARED NAV + FOOTER INJECT ── */
 const NAV_HTML=`
-<<<<<<< HEAD
-<div class="cursor"></div>
-<div class="cursor-ring"></div>
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <div class="nav-logo-icon">⚓</div>
-=======
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
       <div class="nav-logo-icon"><i class="fas fa-anchor" style="color:var(--primary);"></i></div>
->>>>>>> 9f57505 (first commit)
       <span class="nav-logo-text">CleanWave</span>
     </a>
     <ul class="nav-links">
@@ -21,20 +12,12 @@ const NAV_HTML=`
       <li><a href="services.html">Services</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="contact.html">Contact</a></li>
-<<<<<<< HEAD
-      <li><a href="dashboard.html" class="nav-dashboard">Dashboard</a></li>
-=======
       <li><a href="dashboard.html">Dashboard</a></li>
->>>>>>> 9f57505 (first commit)
     </ul>
     <div class="nav-right">
       <button class="nav-btn rtl-btn" aria-label="RTL toggle" title="Toggle RTL">⇄ <span class="rtl-lbl" style="font-size:.6rem;font-family:'Space Mono',monospace;">RTL</span></button>
       <button class="nav-btn theme-btn" aria-label="Theme toggle">☀️</button>
       <a href="login.html" class="nav-cta nav-cta-secondary">Login</a>
-<<<<<<< HEAD
-      <a href="services.html" class="nav-cta nav-cta-primary">Book Now</a>
-=======
->>>>>>> 9f57505 (first commit)
       <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -63,11 +46,7 @@ const FOOTER_HTML=`
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="nav-logo" style="text-decoration:none;display:inline-flex;align-items:center;gap:.6rem;">
-<<<<<<< HEAD
-          <div class="nav-logo-icon" style="width:32px;height:32px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;">⚓</div>
-=======
           <div class="nav-logo-icon" style="width:32px;height:32px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;"><i class="fas fa-anchor" style="color:var(--primary);"></i></div>
->>>>>>> 9f57505 (first commit)
           <span style="font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--secondary);">CleanWave</span>
         </a>
         <p>Premium mobile boat detailing & cleaning at your marina. We come to you — pristine results guaranteed.</p>
@@ -98,11 +77,7 @@ const FOOTER_HTML=`
       </ul></div>
     </div>
     <div class="footer-bottom">
-<<<<<<< HEAD
-      <p>© 2025 CleanWave Marine Detailing. All rights reserved.</p>
-=======
       <p>© 2026 CleanWave Marine Detailing. All rights reserved.</p>
->>>>>>> 9f57505 (first commit)
       <p>Crafted with 🌊 & precision.</p>
     </div>
   </div>
@@ -114,12 +89,9 @@ document.addEventListener('DOMContentLoaded',()=>{
   if(navTarget)navTarget.outerHTML=NAV_HTML;
   const footerTarget=document.querySelector('#footer-inject');
   if(footerTarget)footerTarget.outerHTML=FOOTER_HTML;
-<<<<<<< HEAD
-=======
 
   const page=window.location.pathname.split('/').pop()||'index.html';
   document.querySelectorAll('.nav-links a,.drawer-links a,.sidebar-nav a').forEach(a=>{
     if(a.getAttribute('href')===page)a.classList.add('active');
   });
->>>>>>> 9f57505 (first commit)
 });
