@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Recurring · CleanWave</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="dashboard.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚓</text></svg>"/>
+</head>
+<body>
+<div class="cursor"></div><div class="cursor-ring"></div>
+
+<div class="dash-layout">
+  <aside class="dash-sidebar" id="dash-sidebar">
+    
+  
+  <nav class="sidebar-nav">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon"><i class="fas fa-anchor"></i></div>
+      <span class="nav-logo-text">CleanWave</span>
+    </a>
+    <span class="sidebar-section-label">Main</span>
+    <a href="dashboard.html" ><span class="nav-icon">📊</span>Overview</a>
+    <a href="dashboard-schedule.html" ><span class="nav-icon">📅</span>Schedule</a>
+    <a href="dashboard-history.html" ><span class="nav-icon">🕒</span>History-D</a>
+    <a href="dashboard-recurring.html" class="active"><span class="nav-icon">🔄</span>Recurring</a>
+    <span class="sidebar-section-label">My Fleet</span>
+    <a href="dashboard-boats.html" ><span class="nav-icon">⛵</span>My Fleet</a>
+    <span class="sidebar-section-label">Assets</span>
+    <div class="sidebar-toggles">
+      <button class="nav-btn rtl-btn" title="Toggle RTL">⇄</button>
+      <button class="nav-btn theme-btn" title="Toggle Theme">☀️</button>
+    </div>
+    <button class="logout-btn" onclick="window.location.href='index.html'">
+      <i class="fas fa-sign-out-alt"></i> Sign Out
+    </button>
+  </nav>
+  <div class="sidebar-bottom">
+    
+    
+
+    <div class="sidebar-user">
+      <div class="user-avatar">JW</div>
+      <div class="user-info"><h4>James Whitfield</h4><p>Boat Owner</p></div>
+    </div>
+    
+  </div>
+
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <div class="topbar-left" style="display:flex;align-items:center;gap:1.2rem;">
+        <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+        <div>
+          <h1 id="page-heading">Recurring</h1>
+          <p id="page-sub">Manage your automatic recurring service schedule.</p>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-btn" title="Notifications"><i class="fas fa-bell"></i><div class="badge">3</div></div>
+        <div class="topbar-btn" style="background:var(--accent);color:var(--primary);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;">JW</div>
+      </div>
+    </div>
+
+    <div class="dash-content">
+      <section id="section-recurring">
+      <div class="dash-card reveal">
+        <div class="dash-card-header"><h3>Recurring Appointments</h3><button class="btn btn-primary" style="border:none;cursor:pointer;font-size:.6rem;padding:.5rem 1rem;"><span>+ Add Recurring</span></button></div>
+        <div class="recur-card reveal">
+          <span class="recur-icon">🛥️</span>
+          <div style="flex:1"><div class="recur-name">Monthly Exterior Wash — S/V Horizon</div><div class="recur-detail">Every 1st Monday · Pier 39 · $149/mo · Next: Jul 7</div></div>
+          <div style="display:flex;align-items:center;gap:1rem;"><span class="status status-success">Active</span><div class="toggle-switch on" title="Toggle active"></div></div>
+        </div>
+        <div class="recur-card reveal stagger-1">
+          <span class="recur-icon">⛵</span>
+          <div style="flex:1"><div class="recur-name">Bi-Monthly Full Detail — M/Y Azure</div><div class="recur-detail">Every 2nd month · Marina Bay · $599/service · Next: Jul 15</div></div>
+          <div style="display:flex;align-items:center;gap:1rem;"><span class="status status-success">Active</span><div class="toggle-switch on" title="Toggle active"></div></div>
+        </div>
+        <div class="recur-card reveal stagger-2">
+          <span class="recur-icon">🚤</span>
+          <div style="flex:1"><div class="recur-name">Quarterly Teak Treatment — Power 28</div><div class="recur-detail">Every 3 months · Berkeley Marina · $299/service · Next: Aug 20</div></div>
+          <div style="display:flex;align-items:center;gap:1rem;"><span class="status status-pending">Paused</span><div class="toggle-switch" title="Toggle active"></div></div>
+        </div>
+        <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);">
+          <h4 style="font-family:'DM Serif Display',serif;margin-bottom:.5rem;">Loyalty Savings</h4>
+          <p style="font-size:.88rem;color:var(--text-muted);">Recurring services earn 10% discount + 30 loyalty points per service. Current balance: <strong style="color:var(--accent);">240 points</strong></p>
+        </div>
+      </div>
+    </section>
+    </div>
+  </main>
+</div>
+
+<script src="main.js"></script>
+<script>
+const sbt=document.getElementById('sidebar-toggle'),dsb=document.getElementById('dash-sidebar');
+if(sbt) sbt.addEventListener('click',()=>dsb&&dsb.classList.toggle('open'));
+document.querySelectorAll('.toggle-switch').forEach(t=>t.addEventListener('click',()=>t.classList.toggle('on')));
+</script>
+</body>
+</html>

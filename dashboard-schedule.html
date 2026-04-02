@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Schedule · CleanWave</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="dashboard.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚓</text></svg>"/>
+</head>
+<body>
+<div class="cursor"></div><div class="cursor-ring"></div>
+
+<div class="dash-layout">
+  <aside class="dash-sidebar" id="dash-sidebar">
+    
+  
+  <nav class="sidebar-nav">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon"><i class="fas fa-anchor"></i></div>
+      <span class="nav-logo-text">CleanWave</span>
+    </a>
+    <span class="sidebar-section-label">Main</span>
+    <a href="dashboard.html" ><span class="nav-icon">📊</span>Overview</a>
+    <a href="dashboard-schedule.html" class="active"><span class="nav-icon">📅</span>Schedule</a>
+    <a href="dashboard-history.html" ><span class="nav-icon">🕒</span>History-D</a>
+    <a href="dashboard-recurring.html" ><span class="nav-icon">🔄</span>Recurring</a>
+    <span class="sidebar-section-label">My Fleet</span>
+    <a href="dashboard-boats.html" ><span class="nav-icon">⛵</span>My Fleet</a>
+    <span class="sidebar-section-label">Assets</span>
+    <div class="sidebar-toggles">
+      <button class="nav-btn rtl-btn" title="Toggle RTL">⇄</button>
+      <button class="nav-btn theme-btn" title="Toggle Theme">☀️</button>
+    </div>
+    <button class="logout-btn" onclick="window.location.href='index.html'">
+      <i class="fas fa-sign-out-alt"></i> Sign Out
+    </button>
+  </nav>
+  <div class="sidebar-bottom">
+    
+    
+
+    <div class="sidebar-user">
+      <div class="user-avatar">JW</div>
+      <div class="user-info"><h4>James Whitfield</h4><p>Boat Owner</p></div>
+    </div>
+    
+  </div>
+
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <div class="topbar-left" style="display:flex;align-items:center;gap:1.2rem;">
+        <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+        <div>
+          <h1 id="page-heading">Schedule</h1>
+          <p id="page-sub">Book your next cleaning appointment at your marina.</p>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-btn" title="Notifications"><i class="fas fa-bell"></i><div class="badge">3</div></div>
+        <div class="topbar-btn" style="background:var(--accent);color:var(--primary);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;">JW</div>
+      </div>
+    </div>
+
+    <div class="dash-content">
+      <section id="section-schedule">
+      <div class="dash-card reveal">
+        <div class="dash-card-header"><h3>Book a New Service</h3></div>
+        <div class="dash-form">
+          <div class="form-row">
+            <div class="form-group"><label>Select Boat</label><select><option>S/V Horizon (42ft Sailboat)</option><option>M/Y Azure (38ft Motor Yacht)</option><option>Power 28 (28ft Powerboat)</option></select></div>
+            <div class="form-group"><label>Service Package</label><select><option>Skipper — $299</option><option selected>Captain — $599</option><option>Commodore — $999</option><option>Exterior Wash — $149</option><option>Teak Treatment — $299</option></select></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Preferred Date</label><input type="date"/></div>
+            <div class="form-group"><label>Preferred Time</label><select><option>7:00 AM</option><option>9:00 AM</option><option selected>11:00 AM</option><option>1:00 PM</option><option>3:00 PM</option></select></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Marina / Location</label><select><option>Pier 39 – San Francisco</option><option>Marina Bay – Oakland</option><option>Sausalito Marina</option><option>Berkeley Marina</option></select></div>
+            <div class="form-group"><label>Slip Number</label><input type="text" placeholder="e.g. B-42"/></div>
+          </div>
+          <div class="form-group"><label>Special Requests</label><textarea placeholder="Any specific areas of concern, access instructions, or special requirements…" style="min-height:100px;"></textarea></div>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem;">
+            <button class="btn btn-primary" style="border:none;cursor:pointer;"><span>Confirm Booking →</span></button>
+            <button class="btn btn-dark" style="cursor:pointer;"><span>Save as Draft</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="dash-card reveal" style="margin-top:1.5rem;">
+        <div class="dash-card-header"><h3>Available Slots — June 2025</h3></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.8rem;margin-top:.5rem;">
+          <div style="border:1px solid var(--accent);padding:.8rem;text-align:center;cursor:pointer;background:var(--accent-10)"><div style="font-family:'DM Serif Display',serif;font-size:1.1rem;">Jun 18</div><div style="font-size:.75rem;color:var(--text-muted);">11:00 AM</div><div style="font-size:.7rem;color:var(--accent);margin-top:.3rem;">Available</div></div>
+          <div style="border:1px solid var(--border);padding:.8rem;text-align:center;cursor:pointer;"><div style="font-family:'DM Serif Display',serif;font-size:1.1rem;">Jun 20</div><div style="font-size:.75rem;color:var(--text-muted);">9:00 AM</div><div style="font-size:.7rem;color:var(--accent);margin-top:.3rem;">Available</div></div>
+          <div style="border:1px solid var(--border);padding:.8rem;text-align:center;cursor:pointer;"><div style="font-family:'DM Serif Display',serif;font-size:1.1rem;">Jun 22</div><div style="font-size:.75rem;color:var(--text-muted);">7:00 AM</div><div style="font-size:.7rem;color:var(--accent);margin-top:.3rem;">Available</div></div>
+          <div style="border:1px solid var(--border);padding:.8rem;text-align:center;cursor:pointer;opacity:.5;"><div style="font-family:'DM Serif Display',serif;font-size:1.1rem;">Jun 24</div><div style="font-size:.75rem;color:var(--text-muted);">All Day</div><div style="font-size:.7rem;color:#ef4444;margin-top:.3rem;">Booked Out</div></div>
+          <div style="border:1px solid var(--border);padding:.8rem;text-align:center;cursor:pointer;"><div style="font-family:'DM Serif Display',serif;font-size:1.1rem;">Jun 26</div><div style="font-size:.75rem;color:var(--text-muted);">1:00 PM</div><div style="font-size:.7rem;color:var(--accent);margin-top:.3rem;">Available</div></div>
+        </div>
+      </div>
+    </section>
+    </div>
+  </main>
+</div>
+
+<script src="main.js"></script>
+<script>
+const sbt=document.getElementById('sidebar-toggle'),dsb=document.getElementById('dash-sidebar');
+if(sbt) sbt.addEventListener('click',()=>dsb&&dsb.classList.toggle('open'));
+document.querySelectorAll('.toggle-switch').forEach(t=>t.addEventListener('click',()=>t.classList.toggle('on')));
+</script>
+</body>
+</html>

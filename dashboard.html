@@ -2,15 +2,24 @@
 <html lang="en" data-theme="dark" dir="ltr">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<<<<<<< HEAD
 <title>Dashboard · CleanWave</title>
 <link rel="stylesheet" href="style.css"/>
 <link rel="stylesheet" href="dashboard.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+=======
+<title>Boat Owner Dashboard · CleanWave</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="dashboard.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚓</text></svg>"/>
+>>>>>>> 9f57505 (first commit)
 </head>
 <body>
 <div class="cursor"></div><div class="cursor-ring"></div>
 
 <div class="dash-layout">
+<<<<<<< HEAD
 <!-- SIDEBAR -->
 <aside class="dash-sidebar" id="dash-sidebar">
   <div class="sidebar-logo">
@@ -29,10 +38,41 @@
     <a href="#profile" onclick="showSection('profile',this)"><span class="nav-icon">👤</span>Profile Settings</a>
   </nav>
   <div class="sidebar-bottom">
+=======
+  <aside class="dash-sidebar" id="dash-sidebar">
+    
+  
+  <nav class="sidebar-nav">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon"><i class="fas fa-anchor"></i></div>
+      <span class="nav-logo-text">CleanWave</span>
+    </a>
+    <span class="sidebar-section-label">Main</span>
+    <a href="dashboard.html" class="active"><span class="nav-icon">📊</span>Overview</a>
+    <a href="dashboard-schedule.html" ><span class="nav-icon">📅</span>Schedule</a>
+    <a href="dashboard-history.html" ><span class="nav-icon">🕒</span>History-D</a>
+    <a href="dashboard-recurring.html" ><span class="nav-icon">🔄</span>Recurring</a>
+    <span class="sidebar-section-label">My Fleet</span>
+    <a href="dashboard-boats.html" ><span class="nav-icon">⛵</span>My Fleet</a>
+    <span class="sidebar-section-label">Assets</span>
+<div class="sidebar-toggles">
+      <button class="nav-btn rtl-btn" title="Toggle RTL">⇄</button>
+      <button class="nav-btn theme-btn" title="Toggle Theme">☀️</button>
+    </div>
+    <button class="logout-btn" onclick="window.location.href='index.html'">
+      <i class="fas fa-sign-out-alt"></i> Sign Out
+    </button>  </nav>
+  
+  <div class="sidebar-bottom">
+    
+    
+
+>>>>>>> 9f57505 (first commit)
     <div class="sidebar-user">
       <div class="user-avatar">JW</div>
       <div class="user-info"><h4>James Whitfield</h4><p>Boat Owner</p></div>
     </div>
+<<<<<<< HEAD
     <button class="logout-btn" onclick="window.location.href='login.html'">
       <i class="fas fa-sign-out-alt"></i> Sign Out
     </button>
@@ -60,6 +100,30 @@
 
     <!-- ── OVERVIEW ── -->
     <section id="section-overview">
+=======
+    
+  </div>
+
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <div class="topbar-left" style="display:flex;align-items:center;gap:1.2rem;">
+        <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+        <div>
+          <h1 id="page-heading">Boat Owner Dashboard</h1>
+          <p id="page-sub">Welcome back, James! Your next appointment is on June 18.</p>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-btn" title="Notifications"><i class="fas fa-bell"></i><div class="badge">3</div></div>
+        <div class="topbar-btn" style="background:var(--accent);color:var(--primary);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;">JW</div>
+      </div>
+    </div>
+
+    <div class="dash-content">
+      <section id="section-overview">
+>>>>>>> 9f57505 (first commit)
       <div class="metrics-grid">
         <div class="metric-card reveal"><div class="metric-icon">🛥️</div><div class="metric-val" data-target="3" data-suffix="">0</div><div class="metric-label">Registered Boats</div><div class="metric-change">+1 this year</div></div>
         <div class="metric-card reveal stagger-1"><div class="metric-icon">✅</div><div class="metric-val" data-target="24" data-suffix="">0</div><div class="metric-label">Services Completed</div><div class="metric-change">+4 this quarter</div></div>
@@ -70,6 +134,10 @@
       <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:1.5rem;">
         <div class="dash-card reveal">
           <div class="dash-card-header"><h3>Upcoming Appointments</h3><span class="status status-scheduled">2 Scheduled</span></div>
+<<<<<<< HEAD
+=======
+          <div class="table-responsive">
+>>>>>>> 9f57505 (first commit)
           <table class="data-table">
             <thead><tr><th>Date</th><th>Boat</th><th>Service</th><th>Marina</th><th>Status</th></tr></thead>
             <tbody>
@@ -77,6 +145,7 @@
               <tr><td>Jul 2, 2025</td><td>M/Y Azure</td><td>Exterior Wash</td><td>Marina Bay</td><td><span class="status status-pending">Pending</span></td></tr>
             </tbody>
           </table>
+<<<<<<< HEAD
         </div>
         <div class="dash-card reveal stagger-1">
           <div class="dash-card-header"><h3>June Calendar</h3></div>
@@ -89,6 +158,16 @@
 
       <div class="dash-card reveal" style="margin-top:1.5rem">
         <div class="dash-card-header"><h3>Recent Activity</h3><a href="#" onclick="showSection('history',document.querySelector('[href=\'#history\']'))" style="font-size:.78rem;color:var(--accent);text-decoration:none;">View All →</a></div>
+=======
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="dash-card reveal" style="margin-top:1.5rem">
+        <div class="dash-card-header"><h3>Recent Activity</h3><a href="dashboard-history.html" style="font-size:.78rem;color:var(--accent);text-decoration:none;">View All →</a></div>
+        <div class="table-responsive">
+>>>>>>> 9f57505 (first commit)
         <table class="data-table">
           <thead><tr><th>Date</th><th>Service</th><th>Boat</th><th>Technician</th><th>Amount</th><th>Status</th></tr></thead>
           <tbody>
@@ -97,6 +176,7 @@
             <tr><td>Apr 12</td><td>Exterior Wash</td><td>S/V Horizon</td><td>Marco R.</td><td>$149</td><td><span class="status status-success">Complete</span></td></tr>
           </tbody>
         </table>
+<<<<<<< HEAD
       </div>
     </section>
 
@@ -264,3 +344,20 @@ document.querySelectorAll('.toggle-switch').forEach(t=>t.addEventListener('click
 </script>
 </body>
 </html>
+=======
+        </div>
+      </div>
+    </section>
+    </div>
+  </main>
+</div>
+
+<script src="main.js"></script>
+<script>
+const sbt=document.getElementById('sidebar-toggle'),dsb=document.getElementById('dash-sidebar');
+if(sbt) sbt.addEventListener('click',()=>dsb&&dsb.classList.toggle('open'));
+document.querySelectorAll('.toggle-switch').forEach(t=>t.addEventListener('click',()=>t.classList.toggle('on')));
+</script>
+</body>
+</html>
+>>>>>>> 9f57505 (first commit)

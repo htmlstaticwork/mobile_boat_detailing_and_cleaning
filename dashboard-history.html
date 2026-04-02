@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>History-D · CleanWave</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="dashboard.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚓</text></svg>"/>
+</head>
+<body>
+<div class="cursor"></div><div class="cursor-ring"></div>
+
+<div class="dash-layout">
+  <aside class="dash-sidebar" id="dash-sidebar">
+    
+  <div class="sidebar-logo">
+    
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon"><i class="fas fa-anchor"></i></div>
+      <span class="nav-logo-text">CleanWave</span>
+    </a>
+
+  </div>
+  <nav class="sidebar-nav">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon"><i class="fas fa-anchor"></i></div>
+      <span class="nav-logo-text">CleanWave</span>
+    </a>
+    <span class="sidebar-section-label">Main</span>
+    <a href="dashboard.html" ><span class="nav-icon">📊</span>Overview</a>
+    <a href="dashboard-schedule.html" ><span class="nav-icon">📅</span>Schedule</a>
+    <a href="dashboard-history.html" class="active"><span class="nav-icon">🕒</span>History-D</a>
+    <a href="dashboard-recurring.html" ><span class="nav-icon">🔄</span>Recurring</a>
+    <span class="sidebar-section-label">My Fleet</span>
+    <a href="dashboard-boats.html" ><span class="nav-icon">⛵</span>My Fleet</a>
+    <span class="sidebar-section-label">Assets</span>
+<div class="sidebar-toggles">
+      <button class="nav-btn rtl-btn" title="Toggle RTL">⇄</button>
+      <button class="nav-btn theme-btn" title="Toggle Theme">☀️</button>
+    </div>
+    <button class="logout-btn" onclick="window.location.href='index.html'">
+      <i class="fas fa-sign-out-alt"></i> Sign Out
+    </button>  </nav>
+  <div class="sidebar-bottom">
+    
+    <div class="sidebar-toggles">
+      <button class="nav-btn rtl-btn" title="Toggle RTL">⇄</button>
+      <button class="nav-btn theme-btn" title="Toggle Theme">☀️</button>
+    </div>
+
+    <div class="sidebar-user">
+      <div class="user-avatar">JW</div>
+      <div class="user-info"><h4>James Whitfield</h4><p>Boat Owner</p></div>
+    </div>
+    <button class="logout-btn" onclick="window.location.href='index.html'">
+      <i class="fas fa-sign-out-alt"></i> Sign Out
+    </button>
+  </div>
+
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <div class="topbar-left" style="display:flex;align-items:center;gap:1.2rem;">
+        <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+        <div>
+          <h1 id="page-heading">History-D</h1>
+          <p id="page-sub">View all past services, reports, and spending.</p>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-btn" title="Notifications"><i class="fas fa-bell"></i><div class="badge">3</div></div>
+        <div class="topbar-btn" style="background:var(--accent);color:var(--primary);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;">JW</div>
+      </div>
+    </div>
+
+    <div class="dash-content">
+      <section id="section-history">
+      <div class="dash-card reveal">
+        <div class="dash-card-header"><h3>Service History</h3><span style="font-size:.78rem;color:var(--text-muted);">24 total services</span></div>
+        <div class="table-responsive">
+        <table class="data-table">
+          <thead><tr><th>Date</th><th>Service</th><th>Boat</th><th>Technician</th><th>Marina</th><th>Amount</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>May 30, 2025</td><td>Captain Package</td><td>S/V Horizon</td><td>Marco R.</td><td>Pier 39</td><td>$599</td><td><span class="status status-success">Complete</span></td></tr>
+            <tr><td>May 3, 2025</td><td>Teak Treatment</td><td>M/Y Azure</td><td>Sofia K.</td><td>Marina Bay</td><td>$299</td><td><span class="status status-success">Complete</span></td></tr>
+            <tr><td>Apr 12, 2025</td><td>Exterior Wash</td><td>S/V Horizon</td><td>Marco R.</td><td>Pier 39</td><td>$149</td><td><span class="status status-success">Complete</span></td></tr>
+            <tr><td>Mar 28, 2025</td><td>Commodore Package</td><td>M/Y Azure</td><td>Team</td><td>Marina Bay</td><td>$999</td><td><span class="status status-success">Complete</span></td></tr>
+            <tr><td>Mar 8, 2025</td><td>Interior Clean</td><td>Power 28</td><td>Lena M.</td><td>Berkeley</td><td>$249</td><td><span class="status status-success">Complete</span></td></tr>
+            <tr><td>Feb 14, 2025</td><td>Captain Package</td><td>S/V Horizon</td><td>Marco R.</td><td>Pier 39</td><td>$599</td><td><span class="status status-success">Complete</span></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <div style="margin-top:2rem;">
+          <h4 style="font-family:'DM Serif Display',serif;margin-bottom:1rem;">Spending by Category</h4>
+          <div style="display:flex;flex-direction:column;gap:.8rem;">
+            <div><div style="display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:.3rem;"><span>Full Detail Packages</span><span style="color:var(--accent);">$2,394</span></div><div class="progress-bar"><div class="progress-fill" data-width="72%" style="width:0%"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:.3rem;"><span>Exterior Services</span><span style="color:var(--accent);">$895</span></div><div class="progress-bar"><div class="progress-fill" data-width="45%" style="width:0%"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:.3rem;"><span>Interior & Teak</span><span style="color:var(--accent);">$548</span></div><div class="progress-bar"><div class="progress-fill" data-width="28%" style="width:0%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+  </main>
+</div>
+
+<script src="main.js"></script>
+<script>
+const sbt=document.getElementById('sidebar-toggle'),dsb=document.getElementById('dash-sidebar');
+if(sbt) sbt.addEventListener('click',()=>dsb&&dsb.classList.toggle('open'));
+document.querySelectorAll('.toggle-switch').forEach(t=>t.addEventListener('click',()=>t.classList.toggle('on')));
+</script>
+</body>
+</html>

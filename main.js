@@ -25,6 +25,7 @@ document.addEventListener('click',e=>{
   }
 });
 
+<<<<<<< HEAD
 // ── CURSOR ──
 const cur=document.querySelector('.cursor'),ring=document.querySelector('.cursor-ring');
 let mx=0,my=0,rx=0,ry=0;
@@ -45,6 +46,26 @@ ham&&ham.addEventListener('click',openDrawer);
 dClose&&dClose.addEventListener('click',closeDrawer);
 overlay&&overlay.addEventListener('click',closeDrawer);
 drawer&&drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeDrawer));
+=======
+
+
+// ── HAMBURGER / DRAWER ──
+document.addEventListener('click',e=>{
+  const hamBtn = e.target.closest('.hamburger');
+  if(hamBtn){
+    const d=document.querySelector('.drawer'),o=document.querySelector('.drawer-overlay');
+    if(d)d.classList.add('open');if(o)o.classList.add('show');
+    const s=hamBtn.querySelectorAll('span');
+    if(s.length){s[0].style.transform='rotate(45deg) translate(5px,5px)';s[1].style.opacity='0';s[2].style.transform='rotate(-45deg) translate(5px,-5px)';}
+  }
+  if(e.target.closest('.drawer-close') || e.target.closest('.drawer-overlay') || e.target.closest('.drawer-links a')){
+    const d=document.querySelector('.drawer'),o=document.querySelector('.drawer-overlay');
+    if(d)d.classList.remove('open');if(o)o.classList.remove('show');
+    const hm=document.querySelector('.hamburger');
+    if(hm){hm.querySelectorAll('span').forEach(sp=>{sp.style.transform='';sp.style.opacity='';});}
+  }
+});
+>>>>>>> 9f57505 (first commit)
 
 // ── SCROLL REVEAL ──
 const reveals=document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
@@ -52,6 +73,7 @@ const revObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isInter
 reveals.forEach(el=>revObs.observe(el));
 
 // ── BACK TO TOP ──
+<<<<<<< HEAD
 const btt=document.querySelector('.btt');
 window.addEventListener('scroll',()=>{btt&&btt.classList.toggle('show',window.scrollY>400);});
 btt&&btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
@@ -59,6 +81,10 @@ btt&&btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'})
 // ── ACTIVE NAV ──
 const page=window.location.pathname.split('/').pop()||'index.html';
 document.querySelectorAll('.nav-links a,.drawer-links a,.sidebar-nav a').forEach(a=>{if(a.getAttribute('href')===page)a.classList.add('active');});
+=======
+window.addEventListener('scroll',()=>{const btt=document.querySelector('.btt');if(btt)btt.classList.toggle('show',window.scrollY>400);});
+document.addEventListener('click',e=>{if(e.target.closest('.btt'))window.scrollTo({top:0,behavior:'smooth'});});
+>>>>>>> 9f57505 (first commit)
 
 // ── COUNTER ANIMATION ──
 function animCount(el){
