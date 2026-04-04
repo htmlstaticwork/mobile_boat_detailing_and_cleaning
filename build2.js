@@ -11,7 +11,7 @@ const idToData = {
 
 const LOGO_HTML = `
     <a href="index.html" class="nav-logo">
-      <div class="nav-logo-icon"><i class="fas fa-anchor"></i></div>
+      <div class="nav-logo-icon"><i class="fas fa-anchor" style="color:var(--primary);"></i></div>
       <span class="nav-logo-text">CleanWave</span>
     </a>
 `;

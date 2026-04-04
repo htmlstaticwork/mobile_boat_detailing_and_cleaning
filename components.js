@@ -45,9 +45,9 @@ const FOOTER_HTML=`
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo" style="text-decoration:none;display:inline-flex;align-items:center;gap:.6rem;">
-          <div class="nav-logo-icon" style="width:32px;height:32px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;"><i class="fas fa-anchor" style="color:var(--primary);"></i></div>
-          <span style="font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--secondary);">CleanWave</span>
+        <a href="index.html" class="nav-logo">
+          <div class="nav-logo-icon"><i class="fas fa-anchor" style="color:var(--primary);"></i></div>
+          <span class="nav-logo-text">CleanWave</span>
         </a>
         <p>Premium mobile boat detailing & cleaning at your marina. We come to you — pristine results guaranteed.</p>
         <div class="social-row">
