@@ -63,41 +63,32 @@
     </div>
 
     <div class="dash-content">
-      <section id="section-profile">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;" class="reveal">
-        <div class="dash-card"><div class="dash-card-header"><h3>Personal Info</h3></div>
-          <div class="form-group"><label>Full Name</label><input type="text" value="James Whitfield"/></div>
-          <div class="form-group"><label>Email</label><input type="email" value="james@example.com"/></div>
-          <div class="form-group"><label>Phone</label><input type="tel" value="+1 (415) 555-0182"/></div>
-          <div class="form-group"><label>Home Marina</label><select><option selected>Pier 39, San Francisco</option><option>Marina Bay, Oakland</option><option>Berkeley Marina</option></select></div>
-          <button class="btn btn-primary" style="border:none;cursor:pointer;margin-top:.5rem;"><span>Save Changes</span></button>
-        </div>
-        <div class="dash-card"><div class="dash-card-header"><h3>Change Password</h3></div>
-          <div class="form-group"><label>Current Password</label><input type="password" placeholder="••••••••"/></div>
-          <div class="form-group"><label>New Password</label><input type="password" placeholder="••••••••"/></div>
-          <div class="form-group"><label>Confirm New</label><input type="password" placeholder="••••••••"/></div>
-          <button class="btn btn-primary" style="border:none;cursor:pointer;margin-top:.5rem;"><span>Update Password</span></button>
-          <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);">
-            <h4 style="font-family:'DM Serif Display',serif;margin-bottom:.5rem;font-size:1rem;">Notifications</h4>
-            <div style="display:flex;flex-direction:column;gap:.6rem;margin-top:.5rem;">
-              <label style="display:flex;align-items:center;gap:.5rem;font-size:.88rem;cursor:pointer;"><input type="checkbox" checked style="accent-color:var(--accent)"/> Service reminders (24hr before)</label>
-              <label style="display:flex;align-items:center;gap:.5rem;font-size:.88rem;cursor:pointer;"><input type="checkbox" checked style="accent-color:var(--accent)"/> Service completion reports</label>
-              <label style="display:flex;align-items:center;gap:.5rem;font-size:.88rem;cursor:pointer;"><input type="checkbox" style="accent-color:var(--accent)"/> Promotional offers</label>
-              <label style="display:flex;align-items:center;gap:.5rem;font-size:.88rem;cursor:pointer;"><input type="checkbox" checked style="accent-color:var(--accent)"/> Recurring appointment alerts</label>
+      <section id="section-profile" style="max-width: 900px; margin: 0 auto;">
+        <div class="dash-card reveal">
+          <div class="dash-card-header"><h3>Personal Info</h3></div>
+          <div class="dash-form">
+            <div class="form-row">
+              <div class="form-group"><label>Full Name</label><input type="text" value="James Whitfield"/></div>
+              <div class="form-group"><label>Email</label><input type="email" value="james@example.com"/></div>
             </div>
+            <div class="form-row">
+              <div class="form-group"><label>Phone</label><input type="tel" value="+1 (415) 555-0182"/></div>
+              <div class="form-group"><label>Home Marina</label><select><option selected>Pier 39, San Francisco</option><option>Marina Bay, Oakland</option><option>Berkeley Marina</option></select></div>
+            </div>
+            <button class="btn btn-primary" style="border:none;cursor:pointer;margin-top:.5rem; align-self: center; padding: 0.8rem 2rem;"><span>Save Changes</span></button>
           </div>
         </div>
-      </div>
-      <div class="dash-card reveal" style="margin-top:1.5rem;">
-        <div class="dash-card-header"><h3>Loyalty Program</h3></div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;text-align:center;">
-          <div><div style="font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--accent);" data-target="240" data-suffix="">0</div><div style="font-size:.78rem;color:var(--text-muted);">Current Points</div></div>
-          <div><div style="font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--accent);">Silver</div><div style="font-size:.78rem;color:var(--text-muted);">Current Tier</div></div>
-          <div><div style="font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--accent);">260</div><div style="font-size:.78rem;color:var(--text-muted);">Points to Gold</div></div>
+        
+        <div class="dash-card reveal" style="margin-top:1.5rem;">
+          <div class="dash-card-header"><h3>Loyalty Program</h3></div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;text-align:center;width:100%;">
+            <div><div style="font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--accent);" data-target="240" data-suffix="">0</div><div style="font-size:.78rem;color:var(--text-muted);">Current Points</div></div>
+            <div><div style="font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--accent);">Silver</div><div style="font-size:.78rem;color:var(--text-muted);">Current Tier</div></div>
+            <div><div style="font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--accent);">260</div><div style="font-size:.78rem;color:var(--text-muted);">Points to Gold</div></div>
+          </div>
+          <div style="margin-top:1.5rem; width:100%;"><div style="display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:.4rem;"><span>Progress to Gold</span><span style="color:var(--accent);">240 / 500</span></div><div class="progress-bar"><div class="progress-fill" data-width="48%" style="width:0%"></div></div></div>
         </div>
-        <div style="margin-top:1.5rem;"><div style="display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:.4rem;"><span>Progress to Gold</span><span style="color:var(--accent);">240 / 500</span></div><div class="progress-bar"><div class="progress-fill" data-width="48%" style="width:0%"></div></div></div>
-      </div>
-    </section>
+      </section>
     </div>
   </main>
 </div>
