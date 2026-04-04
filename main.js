@@ -6,7 +6,7 @@
 const root = document.documentElement;
 const saved = localStorage.getItem('boat-theme') || 'dark';
 root.setAttribute('data-theme', saved);
-function setTheme(t){root.setAttribute('data-theme',t);localStorage.setItem('boat-theme',t);document.querySelectorAll('.theme-btn,.theme-btn-drawer').forEach(b=>{b.textContent=t==='dark'?'☀️':'🌙';});}
+function setTheme(t){root.setAttribute('data-theme',t);localStorage.setItem('boat-theme',t);document.querySelectorAll('.theme-btn,.theme-btn-drawer').forEach(b=>{const i=b.querySelector('.nav-icon');if(i)i.textContent=t==='dark'?'☀️':'🌙';else b.textContent=t==='dark'?'☀️':'🌙';});}
 setTheme(saved);
 document.addEventListener('click',e=>{
   if(e.target.closest('.theme-btn,.theme-btn-drawer')){

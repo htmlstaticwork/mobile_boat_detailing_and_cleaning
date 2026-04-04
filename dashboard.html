@@ -14,10 +14,14 @@
 <div class="dash-layout">
   <aside class="dash-sidebar" id="dash-sidebar">
     
-  
+  <div class="sidebar-logo">
+    
+   
+
+  </div>
   <nav class="sidebar-nav">
-    <a href="index.html" class="nav-logo">
-      <div class="nav-logo-icon"><i class="fas fa-anchor"></i></div>
+     <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon"><i class="fas fa-anchor" style="color:var(--primary);"></i></div>
       <span class="nav-logo-text">CleanWave</span>
     </a>
     <span class="sidebar-section-label">Main</span>
@@ -27,24 +31,18 @@
     <a href="dashboard-recurring.html" ><span class="nav-icon">🔄</span>Recurring</a>
     <span class="sidebar-section-label">My Fleet</span>
     <a href="dashboard-boats.html" ><span class="nav-icon">⛵</span>My Fleet</a>
-    <span class="sidebar-section-label">Assets</span>
-<div class="sidebar-toggles">
-      <button class="nav-btn rtl-btn" title="Toggle RTL">⇄</button>
-      <button class="nav-btn theme-btn" title="Toggle Theme">☀️</button>
-    </div>
-    <button class="logout-btn" onclick="window.location.href='index.html'">
-      <i class="fas fa-sign-out-alt"></i> Sign Out
-    </button>  </nav>
-  
+    <span class="sidebar-section-label">Account</span>
+    <a href="dashboard-profile.html" ><span class="nav-icon">👤</span>Profile-D</a>
+    <span class="sidebar-section-label">Settings</span>
+    <a href="javascript:void(0)" class="rtl-btn"><span class="nav-icon">⇄</span><span class="rtl-lbl" style="font-size:.65rem;font-family:Space Mono,monospace;">RTL</span></a>
+    <a href="javascript:void(0)" class="theme-btn"><span class="nav-icon">☀️</span>Theme</a>
+    <a href="index.html" class="logout-link"><span class="nav-icon">🚪</span>Sign Out</a>
+  </nav>
   <div class="sidebar-bottom">
-    
-    
-
     <div class="sidebar-user">
       <div class="user-avatar">JW</div>
       <div class="user-info"><h4>James Whitfield</h4><p>Boat Owner</p></div>
     </div>
-    
   </div>
 
   </aside>

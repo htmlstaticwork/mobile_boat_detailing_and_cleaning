@@ -3,10 +3,10 @@ const fs = require('fs');
 const idToData = {
   'overview': { file: 'dashboard.html', title: 'Boat Owner Dashboard', sub: 'Welcome back, James! Your next appointment is on June 18.' },
   'schedule': { file: 'dashboard-schedule.html', title: 'Schedule', sub: 'Book your next cleaning appointment at your marina.' },
-  'history':  { file: 'dashboard-history.html', title: 'History-D', sub: 'View all past services, reports, and spending.' },
-  'recurring':{ file: 'dashboard-recurring.html', title: 'Recurring', sub: 'Manage your automatic recurring service schedule.' },
-  'boats':    { file: 'dashboard-boats.html', title: 'My Fleet', sub: 'Manage your registered vessels and their details.' },
-  'profile':  { file: 'dashboard-profile.html', title: 'Profile-D', sub: 'Update your account info, password, and preferences.' }
+  'history': { file: 'dashboard-history.html', title: 'History-D', sub: 'View all past services, reports, and spending.' },
+  'recurring': { file: 'dashboard-recurring.html', title: 'Recurring', sub: 'Manage your automatic recurring service schedule.' },
+  'boats': { file: 'dashboard-boats.html', title: 'My Fleet', sub: 'Manage your registered vessels and their details.' },
+  'profile': { file: 'dashboard-profile.html', title: 'Profile-D', sub: 'Update your account info, password, and preferences.' }
 };
 
 const LOGO_HTML = `
@@ -50,22 +50,22 @@ const sidebarTemplate = `
     {{FLEET_NAV}}
     <span class="sidebar-section-label">Account</span>
     {{ACCOUNT_NAV}}
+    <span class="sidebar-section-label">Settings</span>
+    <a href="javascript:void(0)" class="rtl-btn"><span class="nav-icon">⇄</span><span class="rtl-lbl" style="font-size:.65rem;font-family:Space Mono,monospace;">RTL</span></a>
+    <a href="javascript:void(0)" class="theme-btn"><span class="nav-icon">☀️</span>Theme</a>
+    <a href="index.html" class="logout-link"><span class="nav-icon">🚪</span>Sign Out</a>
   </nav>
   <div class="sidebar-bottom">
-    ${TOGGLES_HTML}
     <div class="sidebar-user">
       <div class="user-avatar">JW</div>
       <div class="user-info"><h4>James Whitfield</h4><p>Boat Owner</p></div>
     </div>
-    <button class="logout-btn" onclick="window.location.href='index.html'">
-      <i class="fas fa-sign-out-alt"></i> Sign Out
-    </button>
   </div>
 `;
 
 for (const activeId in idToData) {
   const data = idToData[activeId];
-  
+
   let mainNav = [
     { id: 'overview', file: 'dashboard.html', icon: '📊', label: 'Overview' },
     { id: 'schedule', file: 'dashboard-schedule.html', icon: '📅', label: 'Schedule' },
