@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation | Mobile Boat Detailing & Cleaning</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* ================= GLOBAL ================= */
+        :root {
+            --primary: #00d2ff;
+            --primary-dark: #00a8cc;
+            --bg: #0a0c10;
+            --card-bg: #161b22;
+            --sidebar-bg: #0d1117;
+            --text: #c9d1d9;
+            --text-muted: #8b949e;
+            --border: #30363d;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+            --sidebar-width: 280px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .container {
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        /* ================= SIDEBAR ================= */
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+            overflow-y: auto;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 2.5rem;
+        }
+
+        .logo-icon {
+            color: var(--primary);
+            width: 32px;
+            height: 32px;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--primary);
+        }
+
+        .nav-item i {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ================= MAIN CONTENT ================= */
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            transition: var(--transition);
+        }
+
+        .section {
+            padding-top: 5rem;
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--white), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ================= CARDS ================= */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            width: 100%;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+            color: var(--primary);
+        }
+
+        /* ================= CODE BLOCKS ================= */
+        code {
+            padding: 0.2rem 0.4rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: var(--primary);
+        }
+
+        pre {
+            background: #010409;
+            padding: 1.5rem;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border: 1px solid var(--border);
+        }
+
+        pre code {
+            background: transparent;
+            padding: 0;
+            color: #d1d5db;
+        }
+
+        /* ================= HEADER / NAV ================= */
+        .top-navbar {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background: var(--sidebar-bg);
+            border-bottom: 1px solid var(--border);
+            padding: 0 1.5rem;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 999;
+        }
+
+        .hamburger {
+            background: none;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        /* ================= TABLE ================= */
+        .table-container {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 500px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        /* ================= PROGRESS BAR ================= */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            z-index: 1001;
+            background: transparent;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--primary);
+            width: 0%;
+        }
+
+        /* ================= PDF BUTTON ================= */
+        .pdf-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary);
+            color: var(--bg);
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3);
+            cursor: pointer;
+            z-index: 100;
+            transition: var(--transition);
+        }
+
+        .pdf-btn:hover {
+            transform: scale(1.05);
+            background: var(--white);
+        }
+
+        /* ================= OVERLAY ================= */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            z-index: 999;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        /* Mobile & Tablet */
+        @media (max-width: 1023px) {
+            .sidebar {
+                transform: translateX(-100%);
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .top-navbar {
+                display: flex;
+            }
+
+            .main-content {
+                padding-top: 5rem;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .overlay.active {
+                display: block;
+            }
+        }
+
+        /* Desktop */
+        @media (min-width: 1024px) {
+            body {
+                display: flex;
+            }
+
+            .sidebar {
+                transform: translateX(0);
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+
+            .main-content {
+                margin-left: var(--sidebar-width);
+                padding: 4rem;
+            }
+
+            .hamburger {
+                display: none !important;
+            }
+
+            .top-navbar {
+                display: none;
+            }
+        }
+
+        /* Grid System */
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 767px) {
+            .grid-1 { grid-template-columns: 1fr; }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 1024px) {
+            .grid-2 { grid-template-columns: repeat(2, 1fr); }
+            .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        /* PRINT STYLES */
+        @media print {
+            .sidebar, .pdf-btn, .top-navbar, .progress-container, .overlay {
+                display: none !important;
+            }
+            .main-content {
+                margin-left: 0 !important;
+                padding: 0 !important;
+                max-width: 100% !important;
+            }
+            .section {
+                padding-top: 2rem;
+                page-break-before: always;
+            }
+            .card {
+                border: 1px solid #ccc;
+                box-shadow: none;
+            }
+            body {
+                background: white;
+                color: black;
+            }
+            h1, h2, h3, h4, .section-title {
+                -webkit-text-fill-color: black;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= PROGRESS BAR ================= -->
+    <div class="progress-container">
+        <div class="progress-bar" id="scrollProgress"></div>
+    </div>
+
+    <!-- ================= TOP NAV (Mobile/Tablet Only) ================= -->
+    <nav class="top-navbar">
+        <div class="logo-area" style="margin-bottom: 0;">
+            <i data-lucide="ship" class="logo-icon"></i>
+            <span class="logo-text">Boat Detailing</span>
+        </div>
+        <button class="hamburger" id="hamburgerBtn">
+            <i data-lucide="menu"></i>
+        </button>
+    </nav>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+        <div class="logo-area">
+            <i data-lucide="ship" class="logo-icon"></i>
+            <span class="logo-text">Boat Detailing</span>
+        </div>
+        <ul class="nav-list">
+            <li><a href="#installation" class="nav-item active"><i data-lucide="download"></i> Installation</a></li>
+            <li><a href="#customization" class="nav-item"><i data-lucide="settings"></i> Customization</a></li>
+            <li><a href="#structure" class="nav-item"><i data-lucide="layout"></i> Page Structure</a></li>
+            <li><a href="#credits" class="nav-item"><i data-lucide="award"></i> Credits</a></li>
+            <li><a href="#changelog" class="nav-item"><i data-lucide="history"></i> Changelog</a></li>
+            <li><a href="#support" class="nav-item"><i data-lucide="help-circle"></i> Support</a></li>
+        </ul>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+        
+        <!-- ================= INSTALLATION ================= -->
+        <section id="installation" class="section">
+            <div class="section-header">
+                <h1 class="section-title">Installation Guide</h1>
+                <p>Follow these steps to set up and launch your Mobile Boat Detailing website.</p>
+            </div>
+
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 class="card-title"><i data-lucide="folder-open"></i> 1. Extract & Setup</h3>
+                    <p>Download the project ZIP file and extract it to your desired local directory. Recommended folder structure:</p>
+                    <pre><code>/boat-detailing/
+├── /css/ (Styling)
+├── /js/ (Interactivity)
+├── /images/ (Optimized Assets)
+├── index.html (Home)
+└── /documentation/</code></pre>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title"><i data-lucide="code"></i> 2. Code Editor</h3>
+                    <p>Open the folder in a high-quality editor like <strong>VS Code</strong>. This allows you to easily edit HTML, CSS, and JS files with syntax highlighting.</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title"><i data-lucide="globe"></i> 3. Local Run</h3>
+                    <p>Use the <strong>Live Server</strong> extension in VS Code or simply double-click <code>index.html</code> to view the project in your browser.</p>
+                    <p><small>Note: Using a local server is recommended for better handling of assets and routing.</small></p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title"><i data-lucide="upload-cloud"></i> 4. Deployment</h3>
+                    <p>Upload the extracted files via FTP/SFTP to your server's <code>public_html</code> folder or deploy using <strong>GitHub Pages, Netlify, or Vercel</strong>.</p>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 1.5rem;">
+                <h3 class="card-title"><i data-lucide="alert-triangle"></i> Common Issues & Fixes</h3>
+                <ul>
+                    <li><strong>404 Images:</strong> Ensure image paths are relative and the <code>/images</code> folder exists.</li>
+                    <li><strong>Layout Breaking:</strong> Check if you have modified the CSS variables incorrectly.</li>
+                    <li><strong>Scripts not loading:</strong> Ensure scripts are linked before the closing <code>&lt;/body&gt;</code> tag.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ================= CUSTOMIZATION ================= -->
+        <section id="customization" class="section">
+            <div class="section-header">
+                <h1 class="section-title">Customization Guide</h1>
+                <p>Tailor the branding and appearance of your website to match your boat detailing business.</p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title"><i data-lucide="palette"></i> Branding & Colors</h3>
+                <p>Modify the primary colors in <code>index.css</code> or the <code>&lt;style&gt;</code> block using CSS variables:</p>
+                <pre><code>:root {
+  --primary: #00d2ff; /* Ocean Blue */
+  --primary-dark: #00a8cc;
+  --bg: #0a0c10; /* Premium Dark */
+}</code></pre>
+                <p>💡 Tip: Use a "Before / After" approach. Save your file, refresh the browser, and check the changes immediately.</p>
+            </div>
+
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 class="card-title"><i data-lucide="type"></i> Typography</h3>
+                    <p>We use <strong>Outfit</strong> from Google Fonts. To change it, update the link in the <code>&lt;head&gt;</code> and the <code>font-family</code> in CSS.</p>
+                </div>
+                <div class="card">
+                    <h3 class="card-title"><i data-lucide="image"></i> Images</h3>
+                    <p>Replace assets in the <code>/images</code> folder. 
+                    <br><strong>Recommended Sizes:</strong>
+                    <br>Hero: 1920x1080px (WebP)
+                    <br>Gallery: 800x600px</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title"><i data-lucide="edit-3"></i> Text Content</h3>
+                <p>Edit headings, paragraphs, and buttons directly in the HTML. Look for <code>&lt;!-- TODO: EDIT CONTENT --&gt;</code> comments in the source code to find customizable sections quickly.</p>
+            </div>
+        </section>
+
+        <!-- ================= PAGE STRUCTURE ================= -->
+        <section id="structure" class="section">
+            <div class="section-header">
+                <h1 class="section-title">Page Structure</h1>
+                <p>Detailed breakdown of each page included in the template.</p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title"><i data-lucide="home"></i> Home Page</h3>
+                <p>The main landing page designed to convert visitors into clients.</p>
+                <ul>
+                    <li><strong>Hero Section:</strong> High-impact visual with CTA (Call to Action).</li>
+                    <li><strong>Services Overview:</strong> Quick list of detailing packages.</li>
+                    <li><strong>Features:</strong> Why choose us? (Mobile service, Eco-friendly).</li>
+                    <li><strong>Testimonials:</strong> Client social proof.</li>
+                    <li><strong>Footer:</strong> Navigation and contact details.</li>
+                </ul>
+            </div>
+
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 class="card-title"><i data-lucide="info"></i> About Page</h3>
+                    <p>Focuses on company history, team, and experience in the marine industry.</p>
+                </div>
+                <div class="card">
+                    <h3 class="card-title"><i data-lucide="tool"></i> Services Page</h3>
+                    <p>Detailed breakdown of packages (Interior, Exterior, Ceramic Coating, Waxing).</p>
+                </div>
+                <div class="card">
+                    <h3 class="card-title"><i data-lucide="mail"></i> Contact Page</h3>
+                    <p>Lead generation form, Google Maps integration, and direct contact numbers.</p>
+                </div>
+                <div class="card">
+                    <h3 class="card-title"><i data-lucide="monitor"></i> Dashboard</h3>
+                    <p>Client booking portal where users can manage their appointments and boat profile.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CREDITS ================= -->
+        <section id="credits" class="section">
+            <div class="section-header">
+                <h1 class="section-title">Credits</h1>
+                <p>Resources and libraries used to build this premium documentation system.</p>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Resource</th>
+                            <th>Type</th>
+                            <th>Usage</th>
+                            <th>License</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Outfit</td>
+                            <td>Font</td>
+                            <td>Primary Typography</td>
+                            <td>SIL Open Font License</td>
+                        </tr>
+                        <tr>
+                            <td>Lucide Icons</td>
+                            <td>Icons</td>
+                            <td>Interface Visuals</td>
+                            <td>ISC License</td>
+                        </tr>
+                        <tr>
+                            <td>Unsplash</td>
+                            <td>Images</td>
+                            <td>Hero & Gallery Assets</td>
+                            <td>Free for Commercial Use</td>
+                        </tr>
+                        <tr>
+                            <td>Boxicons</td>
+                            <td>Icons</td>
+                            <td>Social Media Icons</td>
+                            <td>MIT License</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ================= CHANGELOG ================= -->
+        <section id="changelog" class="section">
+            <div class="section-header">
+                <h1 class="section-title">Changelog</h1>
+                <p>Stay updated with the latest improvements and bug fixes.</p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">v1.2 <small>(Latest Release)</small></h3>
+                <ul>
+                    <li>Added Dashboard component for client management.</li>
+                    <li>Improved mobile responsive breakpoints (360px & 768px).</li>
+                    <li>Optimized image loading for faster performance.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">v1.1</h3>
+                <ul>
+                    <li>Integrated Lucide icon set throughout the site.</li>
+                    <li>Enhanced Dark Mode UI aesthetics.</li>
+                    <li>Fixed navigation scroll issues on iOS devices.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">v1.0</h3>
+                <ul>
+                    <li>Initial release of the Boat Detailing template.</li>
+                    <li>Basic structure for Home, About, and Contact pages.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ================= SUPPORT ================= -->
+        <section id="support" class="section">
+            <div class="section-header">
+                <h1 class="section-title">Support & Help</h1>
+                <p>Need assistance? We are here to help you get your business online.</p>
+            </div>
+
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 class="card-title"><i data-lucide="message-square"></i> Contact Us</h3>
+                    <p>For technical support or customization inquiries, reach out via:</p>
+                    <p><strong>Email:</strong> support@boatdetailing-pro.com</p>
+                    <p><strong>Response Time:</strong> Within 24-48 business hours.</p>
+                </div>
+                <div class="card">
+                    <h3 class="card-title"><i data-lucide="file-text"></i> Ticket Details</h3>
+                    <p>When asking for help, please provide:</p>
+                    <ul>
+                        <li>Your order ID.</li>
+                        <li>Detailed description of the issue.</li>
+                        <li>Screenshots if possible.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title"><i data-lucide="zap"></i> Fast Support Tip</h3>
+                <p>Before emailing, check the "Common Issues" segment in the Installation guide to see if your problem has a quick fix.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= PDF DOWNLOAD BUTTON ================= -->
+    <button class="pdf-btn" id="pdfBtn">
+        <i data-lucide="printer"></i> Download PDF
+    </button>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // ================= SIDEBAR TOGGLE (Mobile Only) =================
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        const toggleSidebar = () => {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        };
+
+        hamburgerBtn.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+
+        // Close sidebar on nav item click (mobile)
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth < 1024) {
+                    toggleSidebar();
+                }
+            });
+        });
+
+        // ================= PROGRESS BAR =================
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollProgress").style.width = scrolled + "%";
+            
+            // Handle active section highlight
+            updateActiveSection();
+        };
+
+        // ================= SCROLL HIGHLIGHT =================
+        const sections = document.querySelectorAll('.section');
+        
+        function updateActiveSection() {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').includes(current)) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+        // ================= PDF DOWNLOAD =================
+        const pdfBtn = document.getElementById('pdfBtn');
+        pdfBtn.addEventListener('click', () => {
+            window.print();
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // ================= TODO: Mark Customizable Areas =================
+        // Customization areas are marked with CSS variables and helper cards throughout the doc.
+    </script>
+</body>
+</html>
