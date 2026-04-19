@@ -15,7 +15,7 @@ const NAV_HTML=`
       <li><a href="dashboard.html">Dashboard</a></li>
     </ul>
     <div class="nav-right">
-      <button class="nav-btn rtl-btn" aria-label="RTL toggle" title="Toggle RTL">⇄ <span class="rtl-lbl" style="font-size:.6rem;font-family:'Space Mono',monospace;">RTL</span></button>
+      <button class="nav-btn rtl-btn" aria-label="RTL toggle" title="Toggle RTL"><span class="rtl-lbl" style="font-size:.6rem;font-family:'Space Mono',monospace;">RTL</span></button>
       <button class="nav-btn theme-btn" aria-label="Theme toggle">☀️</button>
       <a href="login.html" class="nav-cta nav-cta-secondary">Login</a>
       <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -35,7 +35,7 @@ const NAV_HTML=`
     <a href="login.html">Login</a>
   </div>
   <div class="drawer-bottom">
-    <button class="nav-btn rtl-btn-drawer" style="width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:none;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;" aria-label="RTL">⇄<span class="rtl-lbl" style="font-size:.55rem;font-family:Space Mono,monospace;margin-left:2px;">RTL</span></button>
+    <button class="nav-btn rtl-btn-drawer" style="width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:none;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;" aria-label="RTL"><span class="rtl-lbl" style="font-size:.6rem;font-family:Space Mono,monospace;">RTL</span></button>
     <button class="nav-btn theme-btn-drawer" style="width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:none;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;" aria-label="Theme">☀️</button>
   </div>
 </div>`;

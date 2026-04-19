@@ -38,19 +38,34 @@ body{cursor:default;}
 .social-btn .si-email{color:var(--accent);}
 .auth-footer-link{margin-top:2rem;text-align:center;font-size:.95rem;color:var(--text-muted);}
 .auth-footer-link a{color:var(--accent);text-decoration:none;font-weight:600;}
-.auth-corner{position:fixed;top:1.5rem;right:1.5rem;display:flex;gap:.5rem;z-index:10;}
+.auth-corner{position:fixed;top:1rem;right:1rem;display:flex;gap:.5rem;z-index:200;}
 .auth-corner button{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--card-bg);color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:all .3s;}
 .auth-corner button:hover{border-color:var(--accent);}
 .strength-bar{margin-top:.4rem;height:3px;background:var(--border);border-radius:2px;overflow:hidden;}
 .strength-fill{height:100%;width:0;border-radius:2px;transition:width .4s,background .4s;}
-@media(max-width:768px){.auth-visual{display:none;}.auth-panel{width:100%;min-height:100vh;padding:2rem 1.5rem;}}
-@media(max-width:360px){.auth-panel{padding:1.5rem 1rem;}}
+/* ── Emphasized form labels ── */
+#login-form .form-group label,
+.login-label-em{font-weight:700;color:var(--accent);letter-spacing:.18em;font-size:.88rem;}
+/* Sign In button emphasis */
+#login-submit{font-weight:700;font-size:.82rem;letter-spacing:.18em;}
+@media(max-width:768px){
+  .auth-visual{display:none;}
+  .auth-panel{width:100%;min-height:100vh;padding:2.5rem 1.5rem;padding-top:5rem;}
+  .auth-corner{top:.75rem;right:.75rem;}
+}
+@media(max-width:360px){
+  .auth-panel{padding:1.5rem 1rem;padding-top:5rem;}
+  .auth-corner{top:.6rem;right:.6rem;}
+}
 </style>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚓</text></svg>"/>
 </head>
 <body>
-<!-- Corner icons -->
-
+<!-- Corner icons – outside the card at all breakpoints -->
+<div class="auth-corner">
+  <button class="rtl-btn" aria-label="RTL"><span class="rtl-lbl" style="font-size:.6rem;font-family:'Space Mono',monospace;">RTL</span></button>
+  <button class="theme-btn" aria-label="Theme">☀️</button>
+</div>
 
 <div class="auth-page">
   <!-- VISUAL -->
@@ -60,10 +75,6 @@ body{cursor:default;}
   <div class="auth-panel">
     
     <div class="auth-panel-inner">
-      <div class="auth-corner">
-  <button class="rtl-btn" aria-label="RTL">⇄<span class="rtl-lbl" style="font-size:.55rem;font-family:'Space Mono',monospace;margin-left:2px">RTL</span></button>
-  <button class="theme-btn" aria-label="Theme">☀️</button>
-</div>
       <a href="index.html" class="auth-logo"><span style="width:30px;height:30px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;"><i class="fas fa-anchor" style="color:var(--primary);"></i></span>CleanWave</a>
       <h1 class="auth-heading">Welcome Back</h1>
 
