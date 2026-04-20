@@ -13,19 +13,17 @@
 /* FLOATING SIDEBAR */
 .dash-sidebar {
   width: 250px;
-  background: rgba(10, 37, 64, 0.6);
+  background: rgba(10, 37, 64, 0.98);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 1.5rem;
-  bottom: 1.5rem;
-  left: 1.5rem;
-  border-radius: 20px;
+  top: 0;
+  bottom: 0;
+  left: 0;
   z-index: 200;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
   transition: transform .4s cubic-bezier(.76, 0, .24, 1);
 }
 
@@ -235,30 +233,29 @@
 
 /* MAIN CONTENT */
 .dash-main {
-  margin-left: calc(250px + 3.5rem);
+  margin-left: 250px;
   display: flex;
   flex-direction: column;
-  padding-right: 2rem;
   min-height: 100vh;
   box-sizing: border-box;
 }
 
 .dash-topbar {
-  background: rgba(10, 37, 64, 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 1rem 2rem;
+  background: #0a2540; /* Solid dark blue */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1.5rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
-  top: 1.5rem;
+  position: fixed; /* Changed from sticky */
+  top: 0;
+  left: 250px; 
+  right: 0;
+  width: calc(100% - 250px);
   z-index: 100;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   flex-wrap: wrap;
-  gap: 1rem;
+  transition: all 0.3s ease;
 }
 
 .topbar-left {
@@ -414,7 +411,7 @@
 }
 
 .dash-content {
-  padding: 2rem 0;
+  padding: 8rem 2rem 2rem 0;
   flex: 1;
   overflow-x: hidden;
 }
@@ -560,11 +557,16 @@
 
 /* DATA GRID SPLIT */
 .dash-grid-2 {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 1.5rem;
   width: 100%;
   box-sizing: border-box;
+}
+.dash-card {
+  max-width: 1100px; /* Centered width */
+  width: 100%;
 }
 
 @media (max-width: 1100px) {
@@ -790,6 +792,41 @@
 }
 
 /* CARDS: BOATS & RECURRING */
+/* ── Schedule Buttons (Standardized across breakpoints) ── */
+.schedule-btns {
+  display: flex !important;
+  gap: 1.5rem !important;
+  justify-content: center !important;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 2rem !important;
+}
+.schedule-btns .btn {
+  min-width: 240px; /* Standardize size */
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+@media(max-width:1440px) {
+  .schedule-btns {
+    justify-content: center !important;
+  }
+}
+@media(max-width:1024px) {
+  .schedule-btns .btn {
+    min-width: 200px;
+  }
+}
+@media(max-width:768px) {
+  .schedule-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+  .schedule-btns .btn {
+    width: 100%;
+    max-width: 400px;
+  }
+}
 .boat-card,
 .recur-card {
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, rgba(0, 0, 0, 0) 100%);
@@ -1109,6 +1146,24 @@
     overflow-x: auto;
   }
 
+  .dash-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0;
+  }
+
+  .dash-main {
+    margin-left: 0;
+  }
+  .dash-content {
+    padding-top: 6rem;
+    padding-right: 0;
+  }
+
   .dash-card {
     padding: 1rem;
     width: 100%;
@@ -1128,9 +1183,9 @@
 }
 
 [data-theme="light"] .dash-topbar {
-  background: rgba(255, 255, 255, 0.95);
+  background: #ffffff !important; /* Force solid white */
   border-color: rgba(10, 37, 64, 0.15);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="light"] .sidebar-nav a {
@@ -1281,11 +1336,6 @@
   opacity: 0.8 !important;
 }
 
-[data-theme="light"] .dash-topbar {
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  border-color: rgba(0, 0, 0, 0.1);
-}
 
 [data-theme="light"] .topbar-left h1 {
   background: none;
@@ -1304,14 +1354,21 @@
 /* RTL SUPPORT */
 [dir="rtl"] .dash-sidebar {
   left: auto;
-  right: 1.5rem;
+  right: 0;
+  border-right: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 [dir="rtl"] .dash-main {
   margin-left: 0;
-  margin-right: calc(250px + 3.5rem);
-  padding-left: 2rem;
+  margin-right: 250px;
+  padding-left: 0;
   padding-right: 0;
+}
+[dir="rtl"] .dash-topbar {
+  left: 0;
+  right: 250px;
+  width: calc(100% - 250px);
 }
 
 @media(max-width:1200px) {
